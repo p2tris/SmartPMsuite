@@ -10201,3 +10201,116 @@
 
 --assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
 
+** 2014-11-21 12:55:21.412 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+** 2014-11-21 13:01:44.613 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 15:59:38.789 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 16:06:41.577 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 16:27:07.557 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_1,go)
+
+** 2014-11-21 16:34:33.427 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 16:37:24.596 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 16:43:27.227 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 16:50:02.022 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+** 2014-11-21 16:55:19.363 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_1,go)
+
+--readyToStart(act1,id_1,go)
+
+--readyToStart(act1,id_1,go)
+
+--readyToStart(act1,id_1,go)
+
+** 2014-11-21 17:42:15.594 **
+--finishedTask(act1,id_1,go,[])
+
+** 2014-11-21 17:47:07.556 **
+--initPMS
+
+--assign(act1,[workitem(go,id_1,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_4,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_7,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_1,go)
+
+** 2014-11-21 17:50:16.706 **
+--finishedTask(act1,id_1,go,[loc33])
+
