@@ -61,6 +61,7 @@ public class ThreadChannel extends Thread {
     }
     catch(IOException ex) {}
     
+    // -- Added by Pätris 2014 --
     // For invoking php script to send also to real devices
     HttpClient httpClient = new DefaultHttpClient();
     // replace with your url
@@ -91,6 +92,7 @@ public class ThreadChannel extends Thread {
 		// Log exception
 		e.printStackTrace();
 	}
+	// --
   }
 
   public String receive() throws IOException {

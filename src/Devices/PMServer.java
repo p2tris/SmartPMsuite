@@ -21,12 +21,14 @@ public class PMServer extends Thread {
     this.port = port;
     this.manager = manager;
     server = new ServerSocket(port);
+    // -- added by Pätris 2014 --
     try {
         SchemaUpload.upload();
     } catch (Exception e) {
  
         e.printStackTrace();
     }
+    // --
   }
 
   public PMServer(int port) throws IOException {
