@@ -1,0 +1,5 @@
+#!/bin/bash
+export PATH_INDIGOLOG=/home/and182/indigolog
+cd /
+cd home/and182/indigolog/Examples/aPMS
+swipl -s main_swing -t 'main'

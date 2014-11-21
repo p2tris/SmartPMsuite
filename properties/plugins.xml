@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugins-repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="plugins_schema.xsd">
+	<plugin-definition name="GPS Plugin" url="http://halapuu.host56.com/pn/map.html">
+	  <description>This plugin allows to select an area from Google Maps.</description>
+	</plugin-definition>
+<plugin-definition name="Noize-Plugin" url="http://halapuu.host56.com/pn/noize.html">
+  <description/>
+ </plugin-definition>
+</plugins-repository>

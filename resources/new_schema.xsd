@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:simpleType name="Service">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="Capability">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="Boolean_type">
+<xs:restriction base="xs:boolean">
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="Integer_type">
+<xs:restriction base="xs:integer">
+<xs:minInclusive value="0"/>
+<xs:maxInclusive value="30"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element id="theory" name="theory">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded">
+<xs:element minOccurs="0" ref="provides"/>
+<xs:element minOccurs="0" ref="requires"/>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+<xs:element name="repository">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded">
+<xs:element minOccurs="0" ref="provides"/>
+<xs:element minOccurs="0" ref="requires"/>
+<xs:element minOccurs="0" ref="task_definition"/>
+<xs:element minOccurs="0" ref="exogenous_event_definition"/>
+<xs:element minOccurs="0" ref="formula_definition"/>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+<xs:simpleType name="task_repository">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="exogenous_event_repository">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="formulae_repository">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="task_definition">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded">
+<xs:element minOccurs="0" name="argument" type="xs:string"/>
+<xs:element minOccurs="0" name="precondition" type="xs:string"/>
+<xs:element minOccurs="0" name="supposed-effect" type="xs:string"/>
+<xs:element minOccurs="0" name="automatic-effect" type="xs:string"/>
+</xs:choice>
+<xs:attribute name="name" type="xs:string"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="exogenous_event_definition">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded">
+<xs:element minOccurs="0" name="argument" type="xs:string"/>
+<xs:element minOccurs="0" name="effect" type="xs:string"/>
+</xs:choice>
+<xs:attribute name="name" type="xs:string"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="formula_definition">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded">
+<xs:element minOccurs="0" name="argument" type="xs:string"/>
+<xs:element minOccurs="0" name="content" type="xs:string"/>
+</xs:choice>
+<xs:attribute name="name" type="xs:string"/>
+</xs:complexType>
+</xs:element>
+<xs:element id="predefined_term-provides" name="provides">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="service" type="Service"/>
+<xs:element name="capability" type="Capability"/>
+</xs:sequence>
+<xs:attribute name="value" type="Boolean_type"/>
+</xs:complexType>
+</xs:element>
+<xs:element id="predefined_term-requires" name="requires">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="task" type="task_repository"/>
+<xs:element name="capability" type="Capability"/>
+</xs:sequence>
+<xs:attribute name="value" type="Boolean_type"/>
+</xs:complexType>
+</xs:element>
+</xs:schema>

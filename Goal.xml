@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<theory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+ <at value="loc00">
+  <prt>act1</prt>
+ </at>
+ <at value="loc00">
+  <prt>act2</prt>
+ </at>
+ <at value="loc00">
+  <prt>act3</prt>
+ </at>
+ <at value="loc00">
+  <prt>act4</prt>
+ </at>
+ <at value="loc00">
+  <prt>rb1</prt>
+ </at>
+ <at value="loc00">
+  <prt>rb2</prt>
+ </at>
+ <evacuated value="false">
+  <loc>loc00</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc10</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc20</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc30</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc01</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc11</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc02</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc03</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc13</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc23</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc31</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc32</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc33</loc>
+ </evacuated>
+ <photoTaken value="false">
+  <loc>loc00</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc10</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc20</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc30</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc01</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc11</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc02</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc03</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc13</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc23</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc31</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc32</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc33</loc>
+ </photoTaken>
+ <status value="ok">
+  <loc>loc00</loc>
+ </status>
+ <status value="ok">
+  <loc>loc10</loc>
+ </status>
+ <status value="ok">
+  <loc>loc20</loc>
+ </status>
+ <status value="ok">
+  <loc>loc30</loc>
+ </status>
+ <status value="ok">
+  <loc>loc01</loc>
+ </status>
+ <status value="ok">
+  <loc>loc11</loc>
+ </status>
+ <status value="ok">
+  <loc>loc02</loc>
+ </status>
+ <status value="ok">
+  <loc>loc03</loc>
+ </status>
+ <status value="ok">
+  <loc>loc13</loc>
+ </status>
+ <status value="ok">
+  <loc>loc23</loc>
+ </status>
+ <status value="ok">
+  <loc>loc31</loc>
+ </status>
+ <status value="ok">
+  <loc>loc32</loc>
+ </status>
+ <status value="ok">
+  <loc>loc33</loc>
+ </status>
+ <batteryLevel value="0">
+  <rbt>rb1</rbt>
+ </batteryLevel>
+ <batteryLevel value="0">
+  <rbt>rb2</rbt>
+ </batteryLevel>
+ <generalBattery value="0"/>
+ <isConnected value="false">
+  <attore>act1</attore>
+ </isConnected>
+ <isConnected value="false">
+  <attore>act2</attore>
+ </isConnected>
+ <isConnected value="false">
+  <attore>act3</attore>
+ </isConnected>
+ <isConnected value="true">
+  <attore>act4</attore>
+ </isConnected>
+</theory>

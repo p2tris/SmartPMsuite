@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element id="plugin-definition" name="plugin-definition">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="description" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="url" type="xs:string"/> 
+  </xs:complexType>
+</xs:element>
+ 
+ <xs:element id="plugins-repository" name="plugins-repository">
+  <xs:complexType>
+    <xs:choice maxOccurs="unbounded">
+      <xs:element minOccurs="0" ref="plugin-definition"/>
+   </xs:choice>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

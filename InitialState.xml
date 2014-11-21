@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<theory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+ <provides value="false">
+  <service>act1</service>
+  <capability>movement</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>hatchet</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>camera</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>gprs</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>extinguisher</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>battery</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>digger</capability>
+ </provides>
+ <provides value="false">
+  <service>act1</service>
+  <capability>powerpack</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>movement</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>hatchet</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>camera</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>gprs</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>extinguisher</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>battery</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>digger</capability>
+ </provides>
+ <provides value="false">
+  <service>act2</service>
+  <capability>powerpack</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>movement</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>hatchet</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>camera</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>gprs</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>extinguisher</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>battery</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>digger</capability>
+ </provides>
+ <provides value="false">
+  <service>act3</service>
+  <capability>powerpack</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>movement</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>hatchet</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>camera</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>gprs</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>extinguisher</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>battery</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>digger</capability>
+ </provides>
+ <provides value="false">
+  <service>act4</service>
+  <capability>powerpack</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>movement</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>hatchet</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>camera</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>gprs</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>extinguisher</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>battery</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>digger</capability>
+ </provides>
+ <provides value="false">
+  <service>rb1</service>
+  <capability>powerpack</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>movement</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>hatchet</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>camera</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>gprs</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>extinguisher</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>battery</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>digger</capability>
+ </provides>
+ <provides value="false">
+  <service>rb2</service>
+  <capability>powerpack</capability>
+ </provides>
+ <requires value="false">
+  <task>move</task>
+  <capability>movement</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>hatchet</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>camera</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>gprs</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>extinguisher</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>battery</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>digger</capability>
+ </requires>
+ <requires value="false">
+  <task>move</task>
+  <capability>powerpack</capability>
+ </requires>
+ <at value="loc00">
+  <srvc>act1</srvc>
+ </at>
+ <at value="loc00">
+  <srvc>act2</srvc>
+ </at>
+ <at value="loc00">
+  <srvc>act3</srvc>
+ </at>
+ <at value="loc00">
+  <srvc>act4</srvc>
+ </at>
+ <at value="loc00">
+  <srvc>rb1</srvc>
+ </at>
+ <at value="loc00">
+  <srvc>rb2</srvc>
+ </at>
+ <evacuated value="false">
+  <loc>loc00</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc10</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc20</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc30</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc01</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc11</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc02</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc03</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc13</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc23</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc31</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc32</loc>
+ </evacuated>
+ <evacuated value="false">
+  <loc>loc33</loc>
+ </evacuated>
+ <photoTaken value="false">
+  <loc>loc00</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc10</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc20</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc30</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc01</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc11</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc02</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc03</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc13</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc23</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc31</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc32</loc>
+ </photoTaken>
+ <photoTaken value="false">
+  <loc>loc33</loc>
+ </photoTaken>
+ <status value="ok">
+  <loc>loc00</loc>
+ </status>
+ <status value="ok">
+  <loc>loc10</loc>
+ </status>
+ <status value="ok">
+  <loc>loc20</loc>
+ </status>
+ <status value="ok">
+  <loc>loc30</loc>
+ </status>
+ <status value="ok">
+  <loc>loc01</loc>
+ </status>
+ <status value="ok">
+  <loc>loc11</loc>
+ </status>
+ <status value="ok">
+  <loc>loc02</loc>
+ </status>
+ <status value="ok">
+  <loc>loc03</loc>
+ </status>
+ <status value="ok">
+  <loc>loc13</loc>
+ </status>
+ <status value="ok">
+  <loc>loc23</loc>
+ </status>
+ <status value="ok">
+  <loc>loc31</loc>
+ </status>
+ <status value="ok">
+  <loc>loc32</loc>
+ </status>
+ <status value="ok">
+  <loc>loc33</loc>
+ </status>
+ <batteryLevel value="0">
+  <rbt>rb1</rbt>
+ </batteryLevel>
+ <batteryLevel value="0">
+  <rbt>rb2</rbt>
+ </batteryLevel>
+ <generalBattery value="0"/>
+ <moveStep value="0"/>
+ <debrisStep value="0"/>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc00</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc10</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc20</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc30</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc01</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc11</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc02</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc03</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc13</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc23</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc31</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc32</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc00</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc10</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc20</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc30</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc01</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc11</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc02</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc03</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc13</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc23</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc31</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc32</loc2>
+ </neigh>
+ <neigh value="false">
+  <loc1>loc33</loc1>
+  <loc2>loc33</loc2>
+ </neigh>
+ <covered value="true">
+  <loc>loc00</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc10</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc20</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc01</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc11</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc02</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc03</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc13</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc23</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc31</loc>
+ </covered>
+ <covered value="true">
+  <loc>loc32</loc>
+ </covered>
+ <covered value="false">
+  <loc>loc33</loc>
+ </covered>
+</theory>
