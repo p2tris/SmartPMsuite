@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /
+cd home/smartpm/indigolog/Examples/aPMS/Planners/LPG-TD
+./lpg-td-1.0 -o domain.pddl -f problem.pddl -out solution -quality -timesteps

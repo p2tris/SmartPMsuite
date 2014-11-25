@@ -1,0 +1,15 @@
+
+; Version LPG-td-1.0
+; Seed 106874276
+; Command line: ./lpg-td-1.0 -o domain.pddl -f problem.pddl -out solution -quality -lowmemory 
+; Problem problem.pddl
+; Actions having STRIPS duration
+; Time 1.01
+; Plan generation time 0.06
+; Search time 0.04
+; Parsing time 0.01
+; Mutex time 0.00
+; MakeSpan 1.00
+
+0:   (GO ACT3 LOC10 LOC31) [1]
+0:   (MOVE RB2 LOC00 LOC32) [1]

@@ -1,0 +1,14 @@
+-> Type of Process : Sequence
+--> Number of instances generated : 5
+--> Size of Tasks Repository : 25
+--> Number of Process Tasks : 20
+-> Variables : 50
+--> Facts in the initial state : 25
+--> Max. Input Vars : 5
+--> Max. Output Vars : 5
+-> Service availables : 5
+--> Max. capabilities coverage : 70%
+--> Full Process tasks coverage : false
+-> Percentage of failures : 70%
+
+ 
