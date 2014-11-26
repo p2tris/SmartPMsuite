@@ -10370,3 +10370,167 @@
 
 --start(act3,id_adapt,go,[loc10,loc31],[loc31])
 
+** 2014-11-26 14:36:10.883 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 14:51:21.704 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 14:55:04.476 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-11-26 14:58:58.734 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 15:07:53.09 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 15:13:42.82 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 15:14:23.241 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:16:54.303 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 15:30:34.615 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-11-26 15:31:39.543 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 15:32:15.496 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:34:13.841 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:34:38.398 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:35:25.382 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:36:24.522 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:36:59.465 **
+--finishedTask(act1,id_1,initialize,[])
+
+** 2014-11-26 15:38:02.134 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+** 2014-11-26 15:38:24.554 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+** 2014-11-26 16:02:38.55 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-11-26 16:03:27.002 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+** 2014-11-26 16:12:12.163 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-11-26 16:15:16.906 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+** 2014-11-26 16:18:56.775 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-11-26 16:20:18.578 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+** 2014-11-26 17:02:26.587 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-11-26 17:03:40.912 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+

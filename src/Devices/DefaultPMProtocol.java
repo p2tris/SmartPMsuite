@@ -1,7 +1,20 @@
 package Devices;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 import java.util.regex.*;
+import java.util.List;
+import java.util.ArrayList;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 
 public class DefaultPMProtocol extends PMProtocol {
 
@@ -44,7 +57,8 @@ public class DefaultPMProtocol extends PMProtocol {
 	  }
 	  else if(ch.isLogin()){
 		  sendToPMS(str);
-	    }
+	   }
+	  
 	   }
   
   public void manageCommand(String str) {
@@ -57,6 +71,40 @@ public class DefaultPMProtocol extends PMProtocol {
 		  if(manager.getAllName().contains("smartpm_terminal")){
 		     dv="smartpm_terminal";
 		  }
+		  // -- Added by Pätris 2014 --
+		    // For invoking php script to send also to real devices
+		    HttpClient httpClient = new DefaultHttpClient();
+		    // replace with your url
+			HttpPost httpPost = new HttpPost("http://smartpm.cloudapp.net/incomingCommands.php"); 
+			
+			
+			//Post Data
+			java.util.List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
+			nameValuePair.add(new BasicNameValuePair("string", str));
+			
+			//Encoding POST data
+			try {
+				httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+			} catch (UnsupportedEncodingException e) {
+				// log exception
+				e.printStackTrace();
+			}
+			
+			//making POST request.
+			try {
+				HttpResponse response = httpClient.execute(httpPost);
+				// write response to log
+				System.out.println("*** Http Post Response:" + response.toString());
+			} catch (ClientProtocolException e) {
+				// Log exception
+				e.printStackTrace();
+			} catch (IOException e) {
+				// Log exception
+				e.printStackTrace();
+			}
+			// --
+		  
+		  
 		  ThreadChannel channel = manager.getChannel(dv);
 		  if(channel.isLogin()) channel.send(str);
 	  }

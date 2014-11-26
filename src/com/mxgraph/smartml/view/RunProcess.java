@@ -1264,11 +1264,11 @@ public static boolean invokeSmartPM(String name_of_the_file) throws IOException 
 		World world = new World(4,4,new Dimension(500,500));
 	    //World world = null;
 	    
-		new Pda2("act1",0,80,world);
-		new Pda2("act2",0,460,world); 
-		new Pda2("act3",340,80,world);
-		new Pda2("act4",340,460,world); 
-		new Pda2("rb1",640,80,world);
+		//new Pda2("act1",0,80,world);
+		//new Pda2("act2",0,460,world); 
+		//new Pda2("act3",340,80,world);
+		//new Pda2("act4",340,460,world); 
+		//new Pda2("rb1",640,80,world);
 		//new Pda2("rb2",640,460,world); 
 		
 		new Environment("Environment",740,820,null); 
