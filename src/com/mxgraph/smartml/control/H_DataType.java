@@ -23,7 +23,9 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 import com.mxgraph.smartml.model.XMLParser;
+import com.mxgraph.smartml.view.AddDataType;
 import com.mxgraph.smartml.view.DataType;
+import com.mxgraph.smartml.view.EditService;
 import com.mxgraph.smartml.view.PluginsManager;
 
 public class H_DataType {
@@ -39,42 +41,99 @@ public class H_DataType {
 
 
 	public void installListeners() {
-		_view.btnUpdate.addActionListener(new ActionListener() {
+		_view.getOKButton().addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(e.getActionCommand().equalsIgnoreCase("UPDATE")){
-					Vector<String> boundsInt = _view.leggiIntegerBounds();
-					// Primo elemento: limite inferiore; Secondo elemento: limite superiore
-					if((Integer.parseInt(boundsInt.get(0)) >= 0 ) && (Integer.parseInt(boundsInt.get(1)) >= Integer.parseInt(boundsInt.get(0)))){
-						XMLParser.setIntegerBounds(boundsInt); // PROVA
-					}
-					else{
-						JOptionPane.showMessageDialog(_view, "The bounds for Integer_type are not valids", "ERROR!", JOptionPane.ERROR_MESSAGE);;
-					}
-					
-					Vector<Vector<String>> user_dtype_vector = _view.leggiDataTypesArea();
-					XMLParser.setUserDataTypes(user_dtype_vector);
-					
+				if(e.getActionCommand().equalsIgnoreCase("OK")){
 					XMLParser.mf.updateInformationView();
 					_view.dispose();
 				}
 				
 			}
 		});
-		
-		_view.btnCancel.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(e.getActionCommand().equalsIgnoreCase("CANCEL")){
-					
-					XMLParser.mf.updateInformationView();
-					_view.dispose();
-				}	
-			}
-		});
+		//Updating the bounds of the Integer_type
+		_view.getUpdateIntegerTypeButton().addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
 		
+            	String min_int_string = _view.getMin_integertype_textField().getText();
+            	String max_int_string = _view.getMax_integertype_textField().getText();
+            	
+            	if(min_int_string.equalsIgnoreCase("") || 
+            			min_int_string.equalsIgnoreCase(" ") ||	min_int_string.contains(" ")) {            		
+            			JOptionPane.showMessageDialog(null, "The lower bound of an Integer_type can not be empty and can not contain blank spaces!", "ATTENTION!", JOptionPane.ERROR_MESSAGE);
+            		
+            	}
+            	else if(max_int_string.equalsIgnoreCase("") || 
+            			max_int_string.equalsIgnoreCase(" ") ||	max_int_string.contains(" ")) {            		
+            			JOptionPane.showMessageDialog(null, "The upper bound of an Integer_type can not be empty and can not contain blank spaces!", "ATTENTION!", JOptionPane.ERROR_MESSAGE);
+            		
+            	}
+            	else {
+            		
+	            	int min_int;
+	            	int max_int;
+	            	
+	            	try {
+	            		
+	            		min_int = Integer.parseInt(min_int_string);
+	            		max_int = Integer.parseInt(max_int_string);
+	            		
+	            		if(min_int >= 0 && max_int >= min_int) {
+	            			Vector boundsInt = new Vector();
+		            		boundsInt.addElement(min_int_string);
+		            		boundsInt.addElement(max_int_string);
+		            		XMLParser.setIntegerBounds(boundsInt);
+							XMLParser.mf.updateInformationView();
+		            		JOptionPane.showMessageDialog(_view, "The bounds of the Integer_type have been correctly updated!", "Info!", JOptionPane.INFORMATION_MESSAGE);
+	    				}
+	            		else {
+	            			JOptionPane.showMessageDialog(_view, "The lower bounds of the Integer_type can not be greater than the upper bound!", "ERROR!", JOptionPane.ERROR_MESSAGE);
+	            		}
+	            		            		
+	            	}
+	            	catch(Exception e) {
+	            		JOptionPane.showMessageDialog(_view, "The bounds of the Integer_type are not valid integers!", "ERROR!", JOptionPane.ERROR_MESSAGE);
+	            	}
+            	}
+			}
+		});		
+		
+		_view.getAddDataTypeButton().addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+               	new AddDataType(_view);    	
+            }
+        });
+		
+		_view.getDeleteDataTypeButton().addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent ae)
+            {
+               	
+            	int selected_index = _view.getDataTypesList().getSelectedIndex();
+            	
+            	if (selected_index == -1) { //no selection
+            		JOptionPane.showMessageDialog(null, "Please select a data type to remove!", "ATTENTION!", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/info_icon.png"));
+            		  } 
+            	else {           
+                    
+            	   	String data_type_string = (String) _view.getDataTypesListModel().getElementAt(selected_index);
+            	   	
+            	   	String[] split = data_type_string.split(" = <");
+            	   	data_type_string = split[0];
+            	   	
+            	   	XMLParser.removeUserDataType(data_type_string);
+            	   	_view.getDataTypesListModel().remove(selected_index);
+            	
+            	 }
+            	
+            }
+        });
 		
 		_view.getPluginButton().addActionListener(new ActionListener()
         {
@@ -150,12 +209,35 @@ public class H_DataType {
                     		 
                     		 XMLParser.scriviFile("properties/" + plugin_name + ".xml", buffer);
                     		 
-                    		 String new_data_type = XMLParser.readPluginFile("properties/" + plugin_name + ".xml");
-                    		 
-         					if(_view.getUserTextArea().getText().contains("<empty>"))
-         						_view.getUserTextArea().setText(new_data_type);
-         					else	
-         						_view.getUserTextArea().setText(_view.getUserTextArea().getText() + "\n" + new_data_type);
+                    		 String name_of_the_new_data_type = XMLParser.readTheNameofTheDataTypeFromThePluginFile("properties/" + plugin_name + ".xml");
+                    		 String new_data_type = XMLParser.parseDataTypeFromPluginFileAsAString("properties/" + plugin_name + ".xml");
+                    		 Vector new_data_type_vector = XMLParser.parseDataTypeFromPluginFileAsAVector("properties/" + plugin_name + ".xml");
+
+                    		 if(isContainedIgnoreCase(name_of_the_new_data_type,XMLParser.getUserDataTypeNames())) {
+                    			 
+         	            	   int reply = JOptionPane.showConfirmDialog(null, "A data type named '" + name_of_the_new_data_type +"' already exists.\nDo you want to substitute it?", "ATTENTION!", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/question_icon.png"));
+     						   
+     						   if(reply==0) {						       							   
+     							  XMLParser.removeUserDataType(name_of_the_new_data_type); 
+     							  
+     							  for(int indx=0;indx<_view.getDataTypesListModel().size();indx++) {
+     								  String s = (String) _view.getDataTypesListModel().elementAt(indx);
+     								  String[] split = s.split(" = <");
+     								  if(split[0].equalsIgnoreCase(name_of_the_new_data_type)){
+     									 _view.getDataTypesListModel().removeElementAt(indx);
+     									 break;
+     								  }
+     							  }
+
+     							  XMLParser.addUserDataType(new_data_type_vector,string_of_generated_xml);
+     							 _view.getDataTypesListModel().addElement(new_data_type);
+     						   }                    			 
+                    		 }                    		 
+                    		   else{
+                    		      _view.getDataTypesListModel().addElement(new_data_type);
+                    		      XMLParser.addUserDataType(new_data_type_vector,XMLNameTextField.getText());
+                    		   }
+
                     		 
 							content.dispose();
 							
@@ -227,5 +309,16 @@ public class H_DataType {
 		      sb.append(sc.nextLine()).append('\n');
 		   return sb.toString();
 		}
+	
+	private static boolean isContainedIgnoreCase(String s, Vector v) {
+	    if(v.isEmpty()) return false;
+	    
+	    for(int i=0;i<v.size();i++) {
+	    	String obj_i = (String) v.elementAt(i);
+	    	if(obj_i.equalsIgnoreCase(s))
+	    		return true;
+	    }
+	    return false;
+	}
 
 }
