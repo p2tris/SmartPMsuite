@@ -154,7 +154,8 @@ private void initGUI() {
     public void actionPerformed(ActionEvent e) {
     	  if (e.getActionCommand().equals("Launch")) {
     		  String s = ex_type_box.getSelectedItem().toString()+"("+loc_type_box.getSelectedItem().toString()+")";
-    		  System.out.println("Environment is sending" + " : "+s);
+    		  System.out.println("*** JAVA-Environment -- Environment is sending the exogenous event" + " : "+s);
+   		  
     		  sendString(s);
     		  
     		  

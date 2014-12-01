@@ -16,6 +16,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.mxgraph.smartml.model.Constants;
+
 public class DefaultPMProtocol extends PMProtocol {
 
   private Map<String, Command> commands;
@@ -58,7 +60,8 @@ public class DefaultPMProtocol extends PMProtocol {
 	  else if(ch.isLogin()){
 		  sendToPMS(str);
 	   }
-	  
+	  else if(Constants.getModality_of_execution().equalsIgnoreCase("execution") && (str.startsWith("readyToStart") || str.startsWith("finishedTask")))
+		  sendToPMS(str);
 	   }
   
   public void manageCommand(String str) {
@@ -71,6 +74,9 @@ public class DefaultPMProtocol extends PMProtocol {
 		  if(manager.getAllName().contains("smartpm_terminal")){
 		     dv="smartpm_terminal";
 		  }
+		  
+		  
+		  if(Constants.getModality_of_execution().equalsIgnoreCase("execution")) {
 		  // -- Added by Pätris 2014 --
 		    // For invoking php script to send also to real devices
 		    HttpClient httpClient = new DefaultHttpClient();
@@ -102,11 +108,13 @@ public class DefaultPMProtocol extends PMProtocol {
 				// Log exception
 				e.printStackTrace();
 			}
+		  }
 			// --
+		  else if(Constants.getModality_of_execution().equalsIgnoreCase("simulation")) {
 		  
-		  
-		  ThreadChannel channel = manager.getChannel(dv);
-		  if(channel.isLogin()) channel.send(str);
+			  ThreadChannel channel = manager.getChannel(dv);
+			  if(channel.isLogin()) channel.send(str);
+		  }
 	  }
 	  else if (str.startsWith("pingTerminal")) {
 		  String dv = new String();
@@ -145,12 +153,50 @@ public class DefaultPMProtocol extends PMProtocol {
    * 
    */
   protected void broadcast(String msg) {
-    Set <String> set =  manager.getAllName();
-    for(String str : set) {
-      if(!str.equalsIgnoreCase("apms")) {
-        ThreadChannel channel = manager.getChannel(str);
-        if(channel.isLogin()) channel.send(msg);
-      }
+	  
+	 if(Constants.getModality_of_execution().equalsIgnoreCase("execution")) {
+
+		 // -- Added by Pätris 2014 --
+		    // For invoking php script to send also to real devices
+		    HttpClient httpClient = new DefaultHttpClient();
+		    // replace with your url
+			HttpPost httpPost = new HttpPost("http://smartpm.cloudapp.net/incomingCommands.php"); 
+			
+			//Post Data
+			java.util.List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);
+			nameValuePair.add(new BasicNameValuePair("string", msg));
+			
+			//Encoding POST data
+			try {
+				httpPost.setEntity(new UrlEncodedFormEntity(nameValuePair));
+			} catch (UnsupportedEncodingException e) {
+				// log exception
+				e.printStackTrace();
+			}
+			
+			//making POST request.
+			try {
+				HttpResponse response = httpClient.execute(httpPost);
+				// write response to log
+				System.out.println("*** Http Post Response:" + response.toString());
+			} catch (ClientProtocolException e) {
+				// Log exception
+				e.printStackTrace();
+			} catch (IOException e) {
+				// Log exception
+				e.printStackTrace();
+			}
+		  
+	  }
+	  else if (Constants.getModality_of_execution().equalsIgnoreCase("simulation")) {
+		    Set <String> set =  manager.getAllName();
+		    for(String str : set) {
+		      if(!str.equalsIgnoreCase("apms")) {
+		        ThreadChannel channel = manager.getChannel(str);
+		        if(channel.isLogin()) channel.send(msg);
+		        
+		      }
+		   }
     }
   }
   

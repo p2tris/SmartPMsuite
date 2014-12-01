@@ -4,8 +4,10 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JMenu; 
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.TransferHandler;
 import javax.swing.UIManager;
@@ -13,6 +15,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import com.mxgraph.examples.swing.editor.EditorActions.HistoryAction;
 import com.mxgraph.model.mxCell;
+import com.mxgraph.smartml.model.Constants;
 import com.mxgraph.smartml.view.DeployProcess;
 import com.mxgraph.smartml.view.MainFrame;
 import com.mxgraph.smartml.view.RunProcess;
@@ -175,6 +178,13 @@ run_process.addActionListener(new ActionListener() {
                 
                 public void actionPerformed(ActionEvent e) {
                     
+                	int reply = JOptionPane.showConfirmDialog(null, "Do you want to simulate the execution of the process?", "ATTENTION!", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, new ImageIcon("images/question_icon.png"));
+                    
+                	if(reply == 0 || reply ==1) {
+                	
+                	if(reply==0) Constants.setModality_of_execution("simulation");
+                	else if(reply==1) Constants.setModality_of_execution("execution");
+                	
                     try {
                         UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
                     } catch (ClassNotFoundException e1) {
@@ -200,6 +210,7 @@ run_process.addActionListener(new ActionListener() {
                    
                     ed.exit();
                     
+                }
                 }
             });
 			

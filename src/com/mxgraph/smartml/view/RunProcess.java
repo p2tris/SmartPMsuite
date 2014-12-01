@@ -1,13 +1,22 @@
 package com.mxgraph.smartml.view;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Vector;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import com.mxgraph.smartml.model.Constants;
 import com.mxgraph.smartml.model.IndiGologWorkitem;
 import com.mxgraph.smartml.model.XMLParser;
+
 
 import Devices.ChannelsManager;
 import Devices.DefaultPMProtocol;
@@ -20,7 +29,8 @@ import Devices.World;
 public class RunProcess {
 	
 	public RunProcess() {
-		try {			
+		
+	try {			
 			//createIndiGologFile();
 			invokeSmartPM("apms.pl");
 		
@@ -28,7 +38,6 @@ public class RunProcess {
 			e.printStackTrace();
 		}	
 	}
-	
 	
 private void createIndiGologFile() {
 	
@@ -1261,18 +1270,21 @@ public static boolean invokeSmartPM(String name_of_the_file) throws IOException 
 		PMServer server = new PMServer(5555, manager);
 	    server.start();
 	 
-		World world = new World(4,4,new Dimension(500,500));
-	    //World world = null;
 	    
-		//new Pda2("act1",0,80,world);
-		//new Pda2("act2",0,460,world); 
-		//new Pda2("act3",340,80,world);
-		//new Pda2("act4",340,460,world); 
-		//new Pda2("rb1",640,80,world);
-		//new Pda2("rb2",640,460,world); 
+	    if(Constants.getModality_of_execution().equalsIgnoreCase("simulation")) {
+			World world = new World(4,4,new Dimension(500,500));
+		    //World world = null;
+	    
+			new Pda2("act1",0,80,world);
+			new Pda2("act2",0,460,world); 
+			new Pda2("act3",340,80,world);
+			new Pda2("act4",340,460,world); 
+			new Pda2("rb1",640,80,world);
+			new Pda2("rb2",640,460,world); 
 		
-		new Environment("Environment",740,820,null); 
-	    
+			new Environment("Environment",740,820,null); 
+	    } 
+	    	
 		//Invocation of the IndiGolog engine
 		try
         {
