@@ -10534,3 +10534,101 @@
 
 --readyToStart(act1,id_1,initialize)
 
+** 2014-12-01 14:39:21.116 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+** 2014-12-02 11:56:55.894 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-02 11:57:13.733 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+** 2014-12-02 15:57:50.456 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-02 15:58:24.814 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-02 15:58:27.302 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+--readyToStart(act1,id_adapt,takephoto)
+
+--start(act1,id_adapt,takephoto,[loc00],[true])
+
+** 2014-12-02 15:58:48.021 **
+--finishedTask(act1,id_adapt,takephoto,[true])
+
+--ackCompl(act1,id_adapt,takephoto)
+
+--release(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-02 15:58:48.741 **
+--adaptFound
+
+** 2014-12-02 15:58:49.022 **
+--adaptFinish
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-02 16:00:11.849 **
+--finishedTask(act4,id_2,chargebattery,[no])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+** 2014-12-02 16:00:31.787 **
+--finishedTask(act1,id_3,go,[loc33])
+
+--ackCompl(act1,id_3,go)
+
+--release(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+** 2014-12-02 16:00:32.801 **
+--adaptStart
+
+--assign(rb1,[workitem(move,id_adapt,[loc00,loc33],[loc33])])
+

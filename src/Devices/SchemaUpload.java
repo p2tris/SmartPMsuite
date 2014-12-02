@@ -22,7 +22,7 @@ public class SchemaUpload {
 	public static void upload() throws Exception {
 		// set project root directory and file directory
         String projectHome=System.getProperty("user.dir");
-        File file = new File(projectHome+"/resources/process_schema.xsd");
+        File file = new File(projectHome+"/resources/new_schema.xsd");
         
         HttpClient httpclient = new DefaultHttpClient();
         httpclient.getParams().setParameter(CoreProtocolPNames.PROTOCOL_VERSION, HttpVersion.HTTP_1_1);

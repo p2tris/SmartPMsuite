@@ -267,23 +267,7 @@
 
 
 
-<xs:simpleType name="Location_type">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="loc00"/>
-   <xs:enumeration value="loc10"/>
-   <xs:enumeration value="loc20"/>
-   <xs:enumeration value="loc30"/>
-   <xs:enumeration value="loc01"/>
-   <xs:enumeration value="loc11"/>
-   <xs:enumeration value="loc02"/>
-   <xs:enumeration value="loc03"/>
-   <xs:enumeration value="loc13"/>
-   <xs:enumeration value="loc23"/>
-   <xs:enumeration value="loc31"/>
-   <xs:enumeration value="loc32"/>
-   <xs:enumeration value="loc33"/>
-  </xs:restriction>
- </xs:simpleType>
+
  <xs:simpleType name="Status_type">
   <xs:restriction base="xs:string">
    <xs:enumeration value="ok"/>
@@ -346,4 +330,24 @@
 
 
 
+<xs:simpleType name="location_type" url="http://halapuu.host56.com/pn/GPSrules1417533197.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="loc00"/>
+   <xs:enumeration value="loc01"/>
+   <xs:enumeration value="loc02"/>
+   <xs:enumeration value="loc03"/>
+   <xs:enumeration value="loc10"/>
+   <xs:enumeration value="loc11"/>
+   <xs:enumeration value="loc12"/>
+   <xs:enumeration value="loc13"/>
+   <xs:enumeration value="loc20"/>
+   <xs:enumeration value="loc21"/>
+   <xs:enumeration value="loc22"/>
+   <xs:enumeration value="loc23"/>
+   <xs:enumeration value="loc30"/>
+   <xs:enumeration value="loc31"/>
+   <xs:enumeration value="loc32"/>
+   <xs:enumeration value="loc33"/>
+  </xs:restriction>
+ </xs:simpleType>
 </xs:schema>

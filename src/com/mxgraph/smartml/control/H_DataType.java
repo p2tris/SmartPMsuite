@@ -229,7 +229,7 @@ public class H_DataType {
      								  }
      							  }
 
-     							  XMLParser.addUserDataType(new_data_type_vector,string_of_generated_xml);
+     							  XMLParser.addUserDataType(new_data_type_vector,XMLNameTextField.getText());
      							 _view.getDataTypesListModel().addElement(new_data_type);
      						   }                    			 
                     		 }                    		 

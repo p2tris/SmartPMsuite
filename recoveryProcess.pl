@@ -1,1 +1,1 @@
-[recoveryTask(go,act3,[loc10,loc31]),recoveryTask(move,rb2,[loc00,loc32])]
+[recoveryTask(move,rb1,[loc00,loc33])]
