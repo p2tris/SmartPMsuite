@@ -81,7 +81,7 @@ public class DefaultPMProtocol extends PMProtocol {
 		    // For invoking php script to send also to real devices
 		    HttpClient httpClient = new DefaultHttpClient();
 		    // replace with your url
-			HttpPost httpPost = new HttpPost("http://smartpm.cloudapp.net/incomingCommands.php"); 
+			HttpPost httpPost = new HttpPost("http://www.dis.uniroma1.it/~smartpm/webtool/incomingCommands.php"); 
 			
 			
 			//Post Data
@@ -160,7 +160,7 @@ public class DefaultPMProtocol extends PMProtocol {
 		    // For invoking php script to send also to real devices
 		    HttpClient httpClient = new DefaultHttpClient();
 		    // replace with your url
-			HttpPost httpPost = new HttpPost("http://smartpm.cloudapp.net/incomingCommands.php"); 
+			HttpPost httpPost = new HttpPost("http://www.dis.uniroma1.it/~smartpm/webtool/incomingCommands.php"); 
 			
 			//Post Data
 			java.util.List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(2);

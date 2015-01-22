@@ -3685,7 +3685,7 @@ public class XMLParser {
 				
 				NodeList rChilds = root.getChildNodes();
 				
-				for(int index=2;index<rChilds.getLength();index++){
+				for(int index=1;index<rChilds.getLength();index++){
 					Node n = rChilds.item(index);
 					if(n.getNodeType()==Element.ELEMENT_NODE){
 						
@@ -3723,7 +3723,7 @@ public class XMLParser {
 				
 				NodeList rChilds = root.getChildNodes();
 				
-				for(int index=2;index<rChilds.getLength();index++){
+				for(int index=1;index<rChilds.getLength();index++){
 					Node n = rChilds.item(index);
 					if(n.getNodeType()==Element.ELEMENT_NODE){
 						

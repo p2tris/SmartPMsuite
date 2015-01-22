@@ -6,4 +6,7 @@
 <plugin-definition name="Noize-Plugin" url="http://smartpm.cloudapp.net/noize.html">
   <description/>
  </plugin-definition>
+<plugin-definition name="Arduino-Plugin" url="http://smartpm.cloudapp.net/arduino.html">
+  <description/>
+ </plugin-definition>
 </plugins-repository>

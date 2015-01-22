@@ -237,8 +237,8 @@
 <xs:element id="static_term-neigh" name="neigh">
   <xs:complexType>
    <xs:sequence>
-    <xs:element name="loc1" type="Location_type"/>
-    <xs:element name="loc2" type="Location_type"/>
+    <xs:element name="loc1" type="location_type"/>
+    <xs:element name="loc2" type="location_type"/>
    </xs:sequence>
    <xs:attribute name="value" type="Boolean_type"/>
   </xs:complexType>
@@ -246,7 +246,7 @@
 <xs:element id="static_term-covered" name="covered">
   <xs:complexType>
    <xs:sequence>
-    <xs:element name="loc" type="Location_type"/>
+    <xs:element name="loc" type="location_type"/>
    </xs:sequence>
    <xs:attribute name="value" type="Boolean_type"/>
   </xs:complexType>
@@ -280,14 +280,14 @@
    <xs:sequence>
     <xs:element name="service" type="Service"/>
    </xs:sequence>
-   <xs:attribute name="value" type="Location_type"/>
+   <xs:attribute name="value" type="location_type"/>
    <xs:attribute default="true" name="relevant" type="Boolean_type"/>
   </xs:complexType>
  </xs:element>
 <xs:element id="dynamic_term-evacuated" name="evacuated">
   <xs:complexType>
    <xs:sequence>
-    <xs:element name="loc" type="Location_type"/>
+    <xs:element name="loc" type="location_type"/>
    </xs:sequence>
    <xs:attribute name="value" type="Boolean_type"/>
    <xs:attribute default="true" name="relevant" type="Boolean_type"/>
@@ -296,7 +296,7 @@
 <xs:element id="dynamic_term-status" name="status">
   <xs:complexType>
    <xs:sequence>
-    <xs:element name="loc" type="Location_type"/>
+    <xs:element name="loc" type="location_type"/>
    </xs:sequence>
    <xs:attribute name="value" type="Status_type"/>
    <xs:attribute default="true" name="relevant" type="Boolean_type"/>
@@ -305,7 +305,7 @@
 <xs:element id="dynamic_term-photoTaken" name="photoTaken">
   <xs:complexType>
    <xs:sequence>
-    <xs:element name="loc" type="Location_type"/>
+    <xs:element name="loc" type="location_type"/>
    </xs:sequence>
    <xs:attribute name="value" type="Boolean_type"/>
    <xs:attribute default="true" name="relevant" type="Boolean_type"/>

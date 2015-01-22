@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><temp_type><lib name="arduino lib" keyword="temp" url="http://smartpm.cloudapp.net/SmartPM_libHumid.apk" /><data_value low="0" high="10" value="cold" /><data_value low="10" high="40" value="normal" /><data_value low="40" high="70" value="hot" /></temp_type>

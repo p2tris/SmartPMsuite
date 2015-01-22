@@ -10632,3 +10632,1244 @@
 
 --assign(rb1,[workitem(move,id_adapt,[loc00,loc33],[loc33])])
 
+** 2014-12-03 16:48:09.068 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-03 16:50:42.914 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-03 16:56:11.695 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-03 16:56:36.773 **
+--finishedTask(act1,id_1,initialize,[debris,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-03 16:56:37.258 **
+--adaptStart
+
+--assign(rb1,[workitem(removedebris,id_adapt,[loc00],[ok])])
+
+** 2014-12-04 11:38:40.874 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-04 16:45:53.771 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 17:56:39.666 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 17:56:54.472 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-09 17:57:45.844 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+** 2014-12-09 18:01:38.129 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 18:02:18.344 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-09 18:02:55.249 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act3,id_9,go)
+
+--start(act3,id_9,go,[loc00,loc31],[loc31])
+
+** 2014-12-09 18:11:17.19 **
+--finishedTask(act3,id_9,go,[loc31])
+
+--ackCompl(act3,id_9,go)
+
+--release(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+** 2014-12-09 18:11:17.845 **
+--adaptStart
+
+--assign(rb2,[workitem(move,id_adapt,[loc00,loc32],[loc32])])
+
+--readyToStart(rb2,id_adapt,move)
+
+--start(rb2,id_adapt,move,[loc00,loc32],[loc32])
+
+** 2014-12-09 18:13:53.928 **
+--finishedTask(rb2,id_adapt,move,[loc32])
+
+--ackCompl(rb2,id_adapt,move)
+
+--release(rb2,[workitem(move,id_adapt,[loc00,loc32],[loc32])])
+
+** 2014-12-09 18:13:55.038 **
+--adaptFound
+
+** 2014-12-09 18:13:55.413 **
+--adaptFinish
+
+--assign(act3,[workitem(evacuate,id_10,[loc31],[true])])
+
+--readyToStart(act3,id_10,evacuate)
+
+--start(act3,id_10,evacuate,[loc31],[true])
+
+** 2014-12-09 18:14:07.305 **
+--finishedTask(act3,id_10,evacuate,[true])
+
+--ackCompl(act3,id_10,evacuate)
+
+--release(act3,[workitem(evacuate,id_10,[loc31],[true])])
+
+--assign(act3,[workitem(updatestatus,id_11,[loc31],[ok])])
+
+--readyToStart(act3,id_11,updatestatus)
+
+--start(act3,id_11,updatestatus,[loc31],[ok])
+
+** 2014-12-09 18:14:19.064 **
+--finishedTask(act3,id_11,updatestatus,[ok])
+
+--ackCompl(act3,id_11,updatestatus)
+
+--release(act3,[workitem(updatestatus,id_11,[loc31],[ok])])
+
+** 2014-12-09 18:20:30.466 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 18:20:39.466 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-09 18:20:53.455 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act3,id_9,go)
+
+--start(act3,id_9,go,[loc00,loc31],[loc31])
+
+** 2014-12-09 18:21:09.502 **
+--finishedTask(act3,id_9,go,[loc31])
+
+--ackCompl(act3,id_9,go)
+
+--release(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+** 2014-12-09 18:21:10.154 **
+--adaptStart
+
+--assign(rb1,[workitem(move,id_adapt,[loc00,loc32],[loc32])])
+
+--readyToStart(act2,id_6,go)
+
+--readyToStart(rb1,id_adapt,move)
+
+--start(rb1,id_adapt,move,[loc00,loc32],[loc32])
+
+** 2014-12-09 18:21:48.406 **
+--finishedTask(rb1,id_adapt,move,[loc32])
+
+--ackCompl(rb1,id_adapt,move)
+
+--release(rb1,[workitem(move,id_adapt,[loc00,loc32],[loc32])])
+
+** 2014-12-09 18:21:49.519 **
+--adaptFound
+
+** 2014-12-09 18:21:49.897 **
+--adaptFinish
+
+--start(act2,id_6,go,[loc00,loc32],[loc32])
+
+--assign(act3,[workitem(evacuate,id_10,[loc31],[true])])
+
+--readyToStart(act3,id_10,evacuate)
+
+--start(act3,id_10,evacuate,[loc31],[true])
+
+** 2014-12-09 18:22:00.437 **
+--finishedTask(act3,id_10,evacuate,[true])
+
+--ackCompl(act3,id_10,evacuate)
+
+--release(act3,[workitem(evacuate,id_10,[loc31],[true])])
+
+--assign(act3,[workitem(updatestatus,id_11,[loc31],[ok])])
+
+--readyToStart(act3,id_11,updatestatus)
+
+--start(act3,id_11,updatestatus,[loc31],[ok])
+
+** 2014-12-09 18:22:13.979 **
+--finishedTask(act3,id_11,updatestatus,[ok])
+
+--ackCompl(act3,id_11,updatestatus)
+
+--release(act3,[workitem(updatestatus,id_11,[loc31],[ok])])
+
+** 2014-12-09 18:22:16.286 **
+--finishedTask(act2,id_6,go,[loc32])
+
+--ackCompl(act2,id_6,go)
+
+--release(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--readyToStart(act1,id_3,go)
+
+--assign(act2,[workitem(evacuate,id_7,[loc32],[true])])
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+** 2014-12-09 18:22:25.965 **
+--finishedTask(act1,id_3,go,[loc33])
+
+--ackCompl(act1,id_3,go)
+
+--release(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--readyToStart(act2,id_7,evacuate)
+
+--start(act2,id_7,evacuate,[loc32],[true])
+
+--assign(act1,[workitem(takephoto,id_4,[loc33],[true])])
+
+** 2014-12-09 18:22:33.682 **
+--finishedTask(act2,id_7,evacuate,[true])
+
+--ackCompl(act2,id_7,evacuate)
+
+--release(act2,[workitem(evacuate,id_7,[loc32],[true])])
+
+--readyToStart(act1,id_4,takephoto)
+
+--assign(act2,[workitem(updatestatus,id_8,[loc32],[ok])])
+
+--start(act1,id_4,takephoto,[loc33],[true])
+
+** 2014-12-09 18:22:45.204 **
+--finishedTask(act1,id_4,takephoto,[true])
+
+--ackCompl(act1,id_4,takephoto)
+
+--release(act1,[workitem(takephoto,id_4,[loc33],[true])])
+
+--assign(act1,[workitem(updatestatus,id_5,[loc33],[ok])])
+
+--readyToStart(act2,id_8,updatestatus)
+
+--start(act2,id_8,updatestatus,[loc32],[ok])
+
+** 2014-12-09 18:22:54.721 **
+--finishedTask(act2,id_8,updatestatus,[ok])
+
+--ackCompl(act2,id_8,updatestatus)
+
+--release(act2,[workitem(updatestatus,id_8,[loc32],[ok])])
+
+--readyToStart(act1,id_5,updatestatus)
+
+--start(act1,id_5,updatestatus,[loc33],[ok])
+
+** 2014-12-09 18:23:03.658 **
+--finishedTask(act1,id_5,updatestatus,[ok])
+
+--ackCompl(act1,id_5,updatestatus)
+
+--release(act1,[workitem(updatestatus,id_5,[loc33],[ok])])
+
+--endPMS
+
+** 2014-12-09 18:23:07.422 **
+--finish
+
+** 2014-12-09 18:23:07.761 **
+--initPMS
+
+--assign(act4,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act4,id_1,initialize)
+
+** 2014-12-09 19:15:58.876 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 19:16:20.862 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-09 19:16:21.285 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-09 19:20:38.71 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 19:20:50.136 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-09 19:20:50.549 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+--readyToStart(act1,id_adapt,takephoto)
+
+--start(act1,id_adapt,takephoto,[loc00],[true])
+
+** 2014-12-09 19:22:00.994 **
+--finishedTask(act1,id_adapt,takephoto,[false])
+
+--ackCompl(act1,id_adapt,takephoto)
+
+--release(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-09 19:22:01.729 **
+--adaptFound
+
+** 2014-12-09 19:22:01.917 **
+--adaptFinish
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+** 2014-12-09 19:31:56.064 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-09 19:33:00.889 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-09 19:33:14.728 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-09 19:33:15.14 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-09 19:37:19.058 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-09 19:39:36.302 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-10 14:59:21.444 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-10 15:04:46.926 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-10 15:05:57.754 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-10 15:11:59.198 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-10 15:12:08.062 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+** 2014-12-11 16:52:32.08 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-11 16:52:41.628 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+** 2014-12-11 16:58:12.971 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-11 17:01:43.591 **
+--finishedTask(act1,id_1,initialize,[ok])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-11 17:04:36.636 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+** 2014-12-11 17:09:47.749 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-11 17:10:03.23 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-11 17:10:38.588 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+** 2014-12-11 17:11:54.748 **
+--finishedTask(act1,id_3,go,[loc33])
+
+--ackCompl(act1,id_3,go)
+
+--release(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+** 2014-12-11 17:11:55.371 **
+--adaptStart
+
+--assign(rb2,[workitem(move,id_adapt,[loc00,loc33],[loc33])])
+
+--readyToStart(rb2,id_adapt,move)
+
+--start(rb2,id_adapt,move,[loc00,loc33],[loc33])
+
+** 2014-12-11 17:14:19.547 **
+--finishedTask(rb2,id_adapt,move,[loc33])
+
+--ackCompl(rb2,id_adapt,move)
+
+--release(rb2,[workitem(move,id_adapt,[loc00,loc33],[loc33])])
+
+** 2014-12-11 17:14:20.552 **
+--adaptFound
+
+** 2014-12-11 17:14:21.229 **
+--adaptFinish
+
+--assign(act1,[workitem(takephoto,id_4,[loc33],[true])])
+
+--readyToStart(act1,id_4,takephoto)
+
+--start(act1,id_4,takephoto,[loc33],[true])
+
+** 2014-12-11 17:14:41.16 **
+--finishedTask(act1,id_4,takephoto,[true])
+
+--ackCompl(act1,id_4,takephoto)
+
+--release(act1,[workitem(takephoto,id_4,[loc33],[true])])
+
+--assign(act1,[workitem(updatestatus,id_5,[loc33],[ok])])
+
+--readyToStart(act1,id_5,updatestatus)
+
+--start(act1,id_5,updatestatus,[loc33],[ok])
+
+** 2014-12-11 17:14:52.408 **
+--finishedTask(act1,id_5,updatestatus,[ok])
+
+--ackCompl(act1,id_5,updatestatus)
+
+--release(act1,[workitem(updatestatus,id_5,[loc33],[ok])])
+
+--readyToStart(act3,id_9,go)
+
+--start(act3,id_9,go,[loc00,loc31],[loc31])
+
+** 2014-12-11 17:15:14.776 **
+--finishedTask(act3,id_9,go,[loc31])
+
+--ackCompl(act3,id_9,go)
+
+--release(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+** 2014-12-11 17:15:16.323 **
+--adaptStart
+
+--readyToStart(act2,id_6,go)
+
+--assign(rb2,[workitem(move,id_adapt,[loc33,loc32],[loc32])])
+
+** 2014-12-11 17:20:00.034 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+--readyToStart(act1,id_1,initialize)
+
+** 2014-12-15 12:52:54.978 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-15 12:53:07.243 **
+--finishedTask(act1,id_1,initialize,[ok,true])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-15 12:53:26.888 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+--readyToStart(act2,id_6,go)
+
+--start(act2,id_6,go,[loc00,loc32],[loc32])
+
+--readyToStart(act3,id_9,go)
+
+--start(act3,id_9,go,[loc00,loc31],[loc31])
+
+** 2014-12-15 12:54:59.408 **
+--finishedTask(act1,id_3,go,[GPS is turned off])
+
+** 2014-12-15 12:55:34.665 **
+--finishedTask(act2,id_6,go,[Waiting for GPS])
+
+** 2014-12-15 12:55:36.438 **
+--finishedTask(act3,id_9,go,[Waiting for GPS])
+
+** 2014-12-15 12:56:26.094 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-15 12:56:36.059 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-15 12:56:36.54 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-15 13:10:54.477 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-15 13:11:04.769 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-15 13:11:05.571 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+--readyToStart(act1,id_adapt,takephoto)
+
+--start(act1,id_adapt,takephoto,[loc00],[true])
+
+** 2014-12-15 13:11:18.69 **
+--finishedTask(act1,id_adapt,takephoto,[true])
+
+--ackCompl(act1,id_adapt,takephoto)
+
+--release(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-15 13:11:19.33 **
+--adaptFound
+
+** 2014-12-15 13:11:19.548 **
+--adaptFinish
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+** 2014-12-16 14:49:33.305 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-16 14:49:47.629 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-16 14:49:49.066 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+--readyToStart(act1,id_adapt,takephoto)
+
+--start(act1,id_adapt,takephoto,[loc00],[true])
+
+** 2014-12-16 14:50:08.184 **
+--finishedTask(act1,id_adapt,takephoto,[true])
+
+--ackCompl(act1,id_adapt,takephoto)
+
+--release(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-16 14:50:09.508 **
+--adaptFound
+
+** 2014-12-16 14:50:09.724 **
+--adaptFinish
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+** 2014-12-22 17:35:11.451 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2014-12-22 17:35:33.057 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2014-12-22 17:35:33.435 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+--readyToStart(act1,id_adapt,takephoto)
+
+--start(act1,id_adapt,takephoto,[loc00],[true])
+
+** 2014-12-22 17:35:55.917 **
+--finishedTask(act1,id_adapt,takephoto,[true])
+
+--ackCompl(act1,id_adapt,takephoto)
+
+--release(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2014-12-22 17:35:56.611 **
+--adaptFound
+
+** 2014-12-22 17:35:56.999 **
+--adaptFinish
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2014-12-22 17:36:33.134 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+** 2014-12-22 17:38:44.753 **
+--finishedTask(act1,id_3,go,[NotMapped position: Latitude = 41.89138199 Longitude = 12.50375898])
+
+** 2015-01-16 12:07:57.207 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:08:19.761 **
+--finishedTask(act1,id_1,checkstatus,[extremelydry,dry])
+
+--ackCompl(act1,id_1,checkstatus)
+
+--release(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+** 2015-01-16 12:08:50.305 **
+--finishedTask(act1,id_3,go,[loc33])
+
+--ackCompl(act1,id_3,go)
+
+--release(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+** 2015-01-16 12:08:50.505 **
+--adaptStart
+
+--assign(rb2,[workitem(move,id_adapt,[loc00,loc32],[loc32])])
+
+--readyToStart(rb2,id_adapt,move)
+
+--start(rb2,id_adapt,move,[loc00,loc32],[loc32])
+
+** 2015-01-16 12:09:05.164 **
+--finishedTask(rb2,id_adapt,move,[loc32])
+
+--ackCompl(rb2,id_adapt,move)
+
+--release(rb2,[workitem(move,id_adapt,[loc00,loc32],[loc32])])
+
+** 2015-01-16 12:09:05.609 **
+--adaptFound
+
+** 2015-01-16 12:09:05.609 **
+--adaptFinish
+
+--assign(act1,[workitem(takephoto,id_4,[loc33],[true])])
+
+** 2015-01-16 12:14:27.87 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:18:58.767 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:23:33.208 **
+--initPMS
+
+--assign(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+--readyToStart(act1,id_1,initialize)
+
+--start(act1,id_1,initialize,[loc00],[ok,true])
+
+** 2015-01-16 12:23:51.416 **
+--finishedTask(act1,id_1,initialize,[ok,false])
+
+--ackCompl(act1,id_1,initialize)
+
+--release(act1,[workitem(initialize,id_1,[loc00],[ok,true])])
+
+** 2015-01-16 12:23:51.784 **
+--adaptStart
+
+--assign(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+--readyToStart(act1,id_adapt,takephoto)
+
+--start(act1,id_adapt,takephoto,[loc00],[true])
+
+** 2015-01-16 12:24:22.37 **
+--finishedTask(act1,id_adapt,takephoto,[true])
+
+--ackCompl(act1,id_adapt,takephoto)
+
+--release(act1,[workitem(takephoto,id_adapt,[loc00],[true])])
+
+** 2015-01-16 12:24:22.868 **
+--adaptFound
+
+** 2015-01-16 12:24:23.033 **
+--adaptFinish
+
+--assign(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--readyToStart(act4,id_2,chargebattery)
+
+--start(act4,id_2,chargebattery,[rb1,loc00],[])
+
+** 2015-01-16 12:25:15.325 **
+--finishedTask(act4,id_2,chargebattery,[])
+
+--ackCompl(act4,id_2,chargebattery)
+
+--release(act4,[workitem(chargebattery,id_2,[rb1,loc00],[])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+** 2015-01-16 12:30:32.377 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:38:27.206 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:42:13.489 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:42:37.817 **
+--finishedTask(act1,id_1,checkstatus,[normal,normal])
+
+--ackCompl(act1,id_1,checkstatus)
+
+--release(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act2,id_6,go)
+
+--start(act2,id_6,go,[loc00,loc32],[loc32])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+--readyToStart(act3,id_9,go)
+
+--start(act3,id_9,go,[loc00,loc31],[loc31])
+
+** 2015-01-16 12:54:20.975 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 12:55:13.335 **
+--finishedTask(act1,id_1,checkstatus,[normal,normal])
+
+--ackCompl(act1,id_1,checkstatus)
+
+--release(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act2,id_6,go)
+
+--start(act2,id_6,go,[loc00,loc32],[loc32])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+--readyToStart(act3,id_9,go)
+
+--start(act3,id_9,go,[loc00,loc31],[loc31])
+
+** 2015-01-16 12:58:01.623 **
+--finishedTask(act2,id_6,go,[loc33])
+
+--ackCompl(act2,id_6,go)
+
+--release(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+** 2015-01-16 12:58:02.097 **
+--adaptStart
+
+--assign(rb2,[workitem(move,id_adapt,[loc00,loc03],[loc03])])
+
+** 2015-01-16 12:58:39.39 **
+--finishedTask(act1,id_3,go,[loc03])
+
+--readyToStart(rb2,id_adapt,move)
+
+--start(rb2,id_adapt,move,[loc00,loc03],[loc03])
+
+** 2015-01-16 13:04:13.145 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 13:04:26.281 **
+--finishedTask(act1,id_1,checkstatus,[normal,normal])
+
+--ackCompl(act1,id_1,checkstatus)
+
+--release(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act2,id_6,go)
+
+--start(act2,id_6,go,[loc00,loc32],[loc32])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+** 2015-01-16 13:07:37.629 **
+--finishedTask(act1,id_3,go,[loc00])
+
+--ackCompl(act1,id_3,go)
+
+--release(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+** 2015-01-16 13:07:38.082 **
+--adaptStart
+
+--assign(act1,[workitem(go,id_adapt,[loc00,loc33],[loc33])])
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+** 2015-01-16 13:16:13.474 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--readyToStart(act1,id_1,checkstatus)
+
+--start(act1,id_1,checkstatus,[loc00],[normal,normal])
+
+** 2015-01-16 13:16:43.234 **
+--finishedTask(act1,id_1,checkstatus,[normal,normal])
+
+--ackCompl(act1,id_1,checkstatus)
+
+--release(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+
+--assign(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_6,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_9,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_3,go)
+
+--start(act1,id_3,go,[loc00,loc33],[loc33])
+
+--readyToStart(act2,id_6,go)
+
+--start(act2,id_6,go,[loc00,loc32],[loc32])
+
+** 2015-01-16 13:17:17.66 **
+--finishedTask(act1,id_3,go,[loc00])
+
+--ackCompl(act1,id_3,go)
+
+--release(act1,[workitem(go,id_3,[loc00,loc33],[loc33])])
+
+** 2015-01-16 13:17:18.134 **
+--adaptStart
+
+--assign(act1,[workitem(go,id_adapt,[loc00,loc33],[loc33])])
+
+--readyToStart(act1,id_adapt,go)
+
+--start(act1,id_adapt,go,[loc00,loc33],[loc33])
+
+** 2015-01-22 13:16:33.383 **
+--initPMS
+
+--assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
+

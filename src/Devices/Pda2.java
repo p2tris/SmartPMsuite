@@ -75,6 +75,8 @@ public class Pda2 implements Runnable {
 	   /*Tipi di dato associati all'esempio - devono essere definiti ad ogni esecuzione del programma*/
 	   private String status_type[] = {"ok","fire","debris"};
 	   private String location_type[] = {"loc00","loc01","loc02","loc03","loc10","loc13","loc20","loc23","loc30","loc31","loc32","loc33"};
+	   private String humidity_type[] = {"extremelydry","dry","normal","danger"};
+	   private String noize_type[] = {"whisper","normal","noise","firecracker"};
 	   
 	   /*Vector contenente tutti i tipi di dato*/
 	   private Vector allDataTypes = new Vector();
@@ -133,6 +135,8 @@ public class Pda2 implements Runnable {
 		   allDataTypes.add(integer_type);
 		   allDataTypes.add(status_type);
 		   allDataTypes.add(location_type);	   
+		   allDataTypes.add(humidity_type);
+		   allDataTypes.add(noize_type);	
 	   }
 	   
 		private void initGUI() {   
