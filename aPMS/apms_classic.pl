@@ -69,21 +69,9 @@ status_type(S) :- domain(S,[ok,fire,debris]).
 
 location_type(L) :- domain(L,[loc00,loc01,loc02,loc03,loc10,loc13,loc20,loc23,loc30,loc31,loc32,loc33]).
 
-mq2_type(M) :- domain(M,[normal,smoke,danger]).
-
-mq5_type(M) :- domain(M,[normal,smoke,danger]).
-
-mq3_type(M) :- domain(M,[normal,high,extra]).
-
-hum_type(M) :- domain(M,[extremelydry,dry,normal,danger]).
-
-temp_type(M) :- domain(M,[cold,normal,hot]).
-
-noize_type(N) :- domain(N,[whisper,normal,noise,firecracker]).
-
 /* TASKS PERSPECTIVE */
 
-task(T) :- domain(T,[chargebattery,go,move,evacuate,removedebris,takephoto,updatestatus,extinguishfire,checkstatus]).
+task(T) :- domain(T,[chargebattery,go,move,evacuate,removedebris,takephoto,updatestatus,extinguishfire,initialize]).
 
 task_identifiers([id_1,id_2,id_3,id_4,id_5,id_6,id_7,id_8,id_9,id_10,id_11,id_12,id_13,id_14,id_15,id_16,id_17,id_18,id_19,id_20,id_21,
 id_22,id_23,id_24,id_25,id_26,id_27,id_28,id_29,id_30,id_31,id_32,id_33,id_34,id_35,id_36,id_37,id_38,id_39,id_40,id_41,id_42,id_43,
@@ -110,7 +98,7 @@ listelem(workitem(removedebris,ID,[LOC],[ST])) :- id(ID),location_type(LOC),stat
 listelem(workitem(extinguishfire,ID,[LOC],[ST])) :- id(ID),location_type(LOC),status_type(ST). 
 listelem(workitem(updatestatus,ID,[LOC],[ST])) :- id(ID),location_type(LOC),status_type(ST).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-listelem(workitem(checkstatus,ID,[LOC],[OUT1,OUT2])) :- id(ID),location_type(LOC),hum_type(OUT1),noize_type(OUT2).
+listelem(workitem(initialize,ID,[LOC],[ST,OUT])) :- id(ID),location_type(LOC),status_type(ST),boolean_type(OUT).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 worklist([]). 
@@ -125,8 +113,8 @@ rec_listelem(recoveryTask(TASK,SRVC,_INPUTS)) :- task(TASK),service(SRVC).
 prim_action(assign(SRVC,LWRK)) :- worklist(LWRK),service(SRVC).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-poss(assign(SRVC,[workitem(checkstatus,ID,[LC],[OUT1,OUT2])]),and(isconnected(SRVC),at(SRVC)=LC)) :- 
-actor(SRVC),id(ID),location_type(LC),hum_type(OUT1),noize_type(OUT2).
+poss(assign(SRVC,[workitem(initialize,ID,[LC],[ST,OUT])]),and(isconnected(SRVC),at(SRVC)=LC)) :- 
+actor(SRVC),id(ID),location_type(LC),status_type(ST),boolean_type(OUT).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 poss(assign(SRVC,[workitem(go,ID,[FROM,TO],[TO])]),and(isconnected(SRVC),at(SRVC)=FROM)) :- 
@@ -239,14 +227,14 @@ causes_val(finishedTask(SRVC,ID,updatestatus,[OUTPUT]),status_exp(LOC),ok,
 	location_type(LOC),status_type(ok),status_type(OUTPUT).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-/*FLUENTS HUM_LEVEL AND NOIZE_LEVEL*/
-fun_fluent(hum_level) :- location_type(P).
-causes_val(finishedTask(SRVC,ID,checkstatus,[OUT1,OUT2]),hum_level,OUT1,assigned(SRVC,[workitem(checkstatus,ID,[LC],[normal,normal])])) :-
-location_type(LC),noize_type(normal),hum_type(normal),hum_type(OUT1).
 
-fun_fluent(noize_level) :- location_type(P).
-causes_val(finishedTask(SRVC,ID,checkstatus,[OUT1,OUT2]),noize_level,OUT2,assigned(SRVC,[workitem(checkstatus,ID,[LC],[normal,normal])])) :-
-location_type(LC),noize_type(normal),hum_type(normal),noize_type(OUT2).
+causes_val(finishedTask(SRVC,ID,initialize,[ST,OUT]),status(LC),ST,assigned(SRVC,[workitem(initialize,ID,[LC],[ok,true])])) :-
+location_type(LC),status_type(ok),status_type(ST),boolean_type(OUT).
+
+causes_val(finishedTask(SRVC,ID,initialize,[ST,OUT]),status_exp(LC),ok,
+    and(assigned(SRVC,[workitem(initialize,ID,[LC],[ok,true])]),neg(adapting))) :-
+	location_type(LC),status_type(ok),status_type(ST),boolean_type(OUT).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 /*FLUENT BATTERYLEVEL*/
@@ -276,6 +264,17 @@ fun_fluent(phototaken_exp(P)) :- location_type(P).
 causes_val(finishedTask(SRVC,ID,takephoto,[OUTPUT]),phototaken_exp(LOC),true,
   	and(neg(adapting),assigned(SRVC,[workitem(takephoto,ID,[LOC],[true])]))) :-
         	service(SRVC),id(ID),location_type(LOC),boolean_type(true),boolean_type(OUTPUT).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+causes_val(finishedTask(SRVC,ID,initialize,[ST,OUT]),phototaken(LC),OUT,assigned(SRVC,[workitem(initialize,ID,[LC],[ok,true])])) :-
+location_type(LC),status_type(ok),status_type(ST),boolean_type(OUT).
+
+causes_val(finishedTask(SRVC,ID,initialize,[ST,OUT]),phototaken_exp(LC),true,
+    and(assigned(SRVC,[workitem(initialize,ID,[LC],[ok,true])]),neg(adapting))) :-
+	location_type(LC),status_type(ok),status_type(ST),boolean_type(OUT).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 /*FLUENT GENERAL BATTERY*/
 fun_fluent(generalbattery).
@@ -310,8 +309,6 @@ initially(batteryrecharging,10).
 initially(movestep,1).
 initially(debrisstep,2).
 initially(generalbattery,50).
-initially(noize_level,50).
-initially(hum_level,50).
 
 initially(at(act1),loc00).
 initially(at_exp(act1),loc00).
@@ -593,7 +590,7 @@ endPMS]).
 
 /* MAIN PROCESS */
 
-proc(process,[initPMS,manageExecution([workitem(checkstatus,id_1,[loc00],[normal,normal])]),
+proc(process,[initPMS,manageExecution([workitem(initialize,id_1,[loc00],[ok,true])]),manageExecution([workitem(chargebattery,id_2,[rb1,loc00],[])]),
 rrobin([
 [manageExecution([workitem(go,id_3,[loc00,loc33],[loc33])]),manageExecution([workitem(takephoto,id_4,[loc33],[true])]),
  manageExecution([workitem(updatestatus,id_5,[loc33],[ok])])],
@@ -640,26 +637,6 @@ proc(writeFile(File),[?(open(File, write, Stream)),
 ?(writeln(Stream,('loc31 - location_type'))),
 ?(writeln(Stream,('loc32 - location_type'))),
 ?(writeln(Stream,('loc33 - location_type'))),	
-?(writeln(Stream,('normal - mq2_type'))),
-?(writeln(Stream,('smoke - mq2_type'))),
-?(writeln(Stream,('danger - mq2_type'))),	
-?(writeln(Stream,('normal - mq5_type'))),
-?(writeln(Stream,('smoke - mq5_type'))),
-?(writeln(Stream,('danger - mq5_type'))),
-?(writeln(Stream,('normal - mq3_type'))),
-?(writeln(Stream,('high - mq3_type'))),
-?(writeln(Stream,('extra - mq3_type'))),
-?(writeln(Stream,('extremelydry - hum_type'))),
-?(writeln(Stream,('dry - hum_type'))),
-?(writeln(Stream,('normal - hum_type'))),
-?(writeln(Stream,('danger - hum_type'))),
-?(writeln(Stream,('cold - temp_type'))),
-?(writeln(Stream,('normal - temp_type'))),
-?(writeln(Stream,('hot - temp_type'))),
-?(writeln(Stream,('whisper - noize_type'))),
-?(writeln(Stream,('normal - noize_type'))),
-?(writeln(Stream,('noise - noize_type'))),
-?(writeln(Stream,('firecracker - noize_type'))),
 ?(writeln(Stream,(')'))),
 ?(writeln(Stream,('(:init'))),
 if(free(act1)=true,?(writeln(Stream,('(free act1)'))),[]),
@@ -849,10 +826,6 @@ proc(printALL,[?(writeln('****FREE****')),
  	       ?(write('movestep = ')),?(writeln(movestep)),
 	       ?(writeln('****DEBRIS STEP****')),
  	       ?(write('debrisstep = ')),?(writeln(debrisstep)),
-	       ?(writeln('****NOIZE LEVEL****')),
- 	       ?(write('noize_level = ')),?(writeln(noize_level)),
-	       ?(writeln('****HUMIDITY LEVEL****')),
- 	       ?(write('hum_level = ')),?(writeln(hum_level)),
 	       ?(writeln('****EVACUATED****')),
 	       ?(write('evacuated(loc00) = ')),?(writeln(evacuated(loc00))),
 	       ?(write('evacuated_exp(loc00) = ')),?(writeln(evacuated_exp(loc00))),

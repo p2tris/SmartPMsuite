@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
 <repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
 
 <provides value="true">
@@ -82,7 +81,11 @@
 
 
 <exogenous_event_definition name="photoLost">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <effect>photoTaken[loc] = false</effect>
  </exogenous_event_definition>
 
@@ -96,7 +99,11 @@
 
 <formula_definition name="isConnected">
   <argument>act - Actor</argument>
+<<<<<<< HEAD
  <content>EXISTS(l1:location_type, l2:location_type, rbt:Robot).
+=======
+ <content>EXISTS(l1:Location_type, l2:Location_type, rbt:Robot).
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
 			(at(act)==l1) AND (Covered(l1)==true OR (at(rbt)==l2 AND (Neigh(l1,l2)==true OR (l1==l2)))
  </content>
 </formula_definition>
@@ -115,8 +122,13 @@
 
 
 <task_definition name="move">
+<<<<<<< HEAD
   <argument>from - location_type</argument>
   <argument>to - location_type</argument>
+=======
+  <argument>from - Location_type</argument>
+  <argument>to - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>at[SRVC] == from</precondition>
   <precondition>batteryLevel[SRVC] &gt;= moveStep[]</precondition>
   <supposed-effect>at[SRVC] = to</supposed-effect>
@@ -133,7 +145,11 @@
 
 
 <task_definition name="extinguishfire">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>at[SRVC] == loc</precondition>
   <precondition>status[loc] == fire</precondition>
   <precondition>isConnected[SRVC] == true</precondition>
@@ -143,7 +159,11 @@
 
 
 <task_definition name="evacuate">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>at[SRVC] == loc</precondition>
   <precondition>evacuated[loc] == false</precondition>
   <precondition>isConnected[SRVC] == true</precondition>
@@ -152,7 +172,11 @@
  </task_definition>
 
 <task_definition name="chargebattery">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <argument>rb - Robot</argument>
   <precondition>at[SRVC] == loc</precondition>
   <precondition>at[rb] == loc</precondition>
@@ -163,13 +187,18 @@
   <automatic-effect>generalBattery[] -= batteryRecharging[]</automatic-effect>
  </task_definition>
 <task_definition name="removeDebris">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>at[SRVC] == loc</precondition>
   <precondition>status[loc] == debris</precondition>
   <supposed-effect>status[loc] = ok</supposed-effect>
   <automatic-effect>batteryLevel[rb1] -= debrisStep[]</automatic-effect>
  </task_definition>
 <exogenous_event_definition name="fire">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
   <effect>status[loc] = fire</effect>
  </exogenous_event_definition>
@@ -180,6 +209,18 @@
 <task_definition name="go">
   <argument>from - location_type</argument>
   <argument>to - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+  <effect>status[loc] = fire</effect>
+ </exogenous_event_definition>
+<exogenous_event_definition name="rockSlide">
+  <argument>loc - Location_type</argument>
+  <effect>status[loc] = debris</effect>
+ </exogenous_event_definition>
+<task_definition name="go">
+  <argument>from - Location_type</argument>
+  <argument>to - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>at[SRVC] == from</precondition>
   <precondition>isConnected[SRVC] == true</precondition>
   <supposed-effect>at[SRVC] = to</supposed-effect>
@@ -217,7 +258,11 @@
 
 
 <task_definition name="takePhoto">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>photoTaken[loc] == false</precondition>
   <precondition>isConnected[SRVC] == true</precondition>
   <precondition>at[SRVC] == loc</precondition>
@@ -230,7 +275,11 @@
   <capability>extinguisher</capability>
  </provides>
 <task_definition name="updstatus">
+<<<<<<< HEAD
   <argument>loc - location_type</argument>
+=======
+  <argument>loc - Location_type</argument>
+>>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25
   <precondition>at[SRVC] == loc</precondition>
   <precondition>isConnected[SRVC] == true</precondition>
   <precondition>status[loc] == ok</precondition>
@@ -253,7 +302,3 @@
   <automatic-effect/>
  </task_definition>
 </repository>
-=======
-<repository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="new_schema.xsd">
-</repository>
->>>>>>> 47ffe59c72606145a99919503e6f80a2b6b9ce25

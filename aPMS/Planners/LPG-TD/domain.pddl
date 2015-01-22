@@ -3,7 +3,7 @@
 (define (domain Derailment)
 (:requirements :derived-predicates :typing :fluents :equality)
 (:types robot actor - service 
-	capability location_type status_type)
+	capability location_type status_type mq2_type mq3_type mq5_type hum_type temp_type noize_type)
 
 (:predicates 
 (free ?x - service)
