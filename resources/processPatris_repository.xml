@@ -243,12 +243,24 @@
 
 
 
-<task_definition name="checkstatus">
-  <argument>loc - location_type</argument>
-  <precondition>isConnected[SRVC] == true</precondition>
-  <precondition>at[SRVC] == loc</precondition>
-  <supposed-effect>hum_level[] = normal</supposed-effect>
+
+<task_definition name="checktemp">
+  <supposed-effect>temp_level[] = normal</supposed-effect>
+  <automatic-effect/>
+ </task_definition>
+<task_definition name="checknoize">
   <supposed-effect>noize_level[] = normal</supposed-effect>
+  <automatic-effect/>
+ </task_definition>
+<task_definition name="checkairquality">
+  <supposed-effect>hum_level[] = normal</supposed-effect>
+  <supposed-effect>hcho_level[] = normal</supposed-effect>
+  <automatic-effect/>
+ </task_definition>
+<task_definition name="checkairstatus">
+  <supposed-effect>mq2_level[] = normal</supposed-effect>
+  <supposed-effect>mq3_level[] = normal</supposed-effect>
+  <supposed-effect>mq5_level[] = normal</supposed-effect>
   <automatic-effect/>
  </task_definition>
 </repository>

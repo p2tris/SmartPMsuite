@@ -75,15 +75,17 @@ mq5_type(M) :- domain(M,[normal,smoke,danger]).
 
 mq3_type(M) :- domain(M,[normal,high,extra]).
 
-hum_type(M) :- domain(M,[extremelydry,dry,normal,danger]).
+hcho_type(M) :- domain(M,[normal,voc,danger]).
 
-temp_type(M) :- domain(M,[cold,normal,hot]).
+hum_type(M) :- domain(M,[dry,normal,wet]).
 
-noize_type(N) :- domain(N,[whisper,normal,noise,firecracker]).
+temp_type(M) :- domain(M,[cold,chilly,normal,warm]).
+
+noize_type(N) :- domain(N,[whisper,normal,stereo,ambulance,firecracker]).
 
 /* TASKS PERSPECTIVE */
 
-task(T) :- domain(T,[chargebattery,go,move,evacuate,removedebris,takephoto,updatestatus,extinguishfire,checkstatus]).
+task(T) :- domain(T,[chargebattery,go,move,evacuate,removedebris,takephoto,updatestatus,extinguishfire,checkairstatus,checktemp,checknoize,checkairquality]).
 
 task_identifiers([id_1,id_2,id_3,id_4,id_5,id_6,id_7,id_8,id_9,id_10,id_11,id_12,id_13,id_14,id_15,id_16,id_17,id_18,id_19,id_20,id_21,
 id_22,id_23,id_24,id_25,id_26,id_27,id_28,id_29,id_30,id_31,id_32,id_33,id_34,id_35,id_36,id_37,id_38,id_39,id_40,id_41,id_42,id_43,
@@ -110,7 +112,10 @@ listelem(workitem(removedebris,ID,[LOC],[ST])) :- id(ID),location_type(LOC),stat
 listelem(workitem(extinguishfire,ID,[LOC],[ST])) :- id(ID),location_type(LOC),status_type(ST). 
 listelem(workitem(updatestatus,ID,[LOC],[ST])) :- id(ID),location_type(LOC),status_type(ST).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-listelem(workitem(checkstatus,ID,[LOC],[OUT1,OUT2])) :- id(ID),location_type(LOC),hum_type(OUT1),noize_type(OUT2).
+listelem(workitem(checktemp,ID,[],[OUT])) :- id(ID),temp_type(OUT).
+listelem(workitem(checknoize,ID,[],[OUT])) :- id(ID),noize_type(OUT).
+listelem(workitem(checkairquality,ID,[],[OUT1,OUT2])) :- id(ID),hum_type(OUT1),hcho_type(OUT2).
+listelem(workitem(checkairstatus,ID,[],[OUT1,OUT2,OUT3])) :- id(ID),mq2_type(OUT1),mq3_type(OUT2),mq5_type(OUT3).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 worklist([]). 
@@ -125,8 +130,10 @@ rec_listelem(recoveryTask(TASK,SRVC,_INPUTS)) :- task(TASK),service(SRVC).
 prim_action(assign(SRVC,LWRK)) :- worklist(LWRK),service(SRVC).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-poss(assign(SRVC,[workitem(checkstatus,ID,[LC],[OUT1,OUT2])]),and(isconnected(SRVC),at(SRVC)=LC)) :- 
-actor(SRVC),id(ID),location_type(LC),hum_type(OUT1),noize_type(OUT2).
+poss(assign(SRVC,[workitem(checktemp,ID,[],[OUT])]),true) :- actor(SRVC),id(ID),temp_type(OUT).
+poss(assign(SRVC,[workitem(checknoize,ID,[],[OUT])]),true) :- actor(SRVC),id(ID),noize_type(OUT).
+poss(assign(SRVC,[workitem(checkairquality,ID,[],[OUT1,OUT2])]),true) :- actor(SRVC),id(ID),hum_type(OUT1),hcho_type(OUT2).
+poss(assign(SRVC,[workitem(checkairstatus,ID,[],[OUT1,OUT2,OUT3])]),true) :- actor(SRVC),id(ID),mq2_type(OUT1),mq3_type(OUT2),mq5_type(OUT3).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 poss(assign(SRVC,[workitem(go,ID,[FROM,TO],[TO])]),and(isconnected(SRVC),at(SRVC)=FROM)) :- 
@@ -239,14 +246,39 @@ causes_val(finishedTask(SRVC,ID,updatestatus,[OUTPUT]),status_exp(LOC),ok,
 	location_type(LOC),status_type(ok),status_type(OUTPUT).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-/*FLUENTS HUM_LEVEL AND NOIZE_LEVEL*/
-fun_fluent(hum_level) :- location_type(P).
-causes_val(finishedTask(SRVC,ID,checkstatus,[OUT1,OUT2]),hum_level,OUT1,assigned(SRVC,[workitem(checkstatus,ID,[LC],[normal,normal])])) :-
-location_type(LC),noize_type(normal),hum_type(normal),hum_type(OUT1).
+/*FLUENTS TEMP_LEVEL AND NOIZE_LEVEL*/
 
-fun_fluent(noize_level) :- location_type(P).
-causes_val(finishedTask(SRVC,ID,checkstatus,[OUT1,OUT2]),noize_level,OUT2,assigned(SRVC,[workitem(checkstatus,ID,[LC],[normal,normal])])) :-
-location_type(LC),noize_type(normal),hum_type(normal),noize_type(OUT2).
+fun_fluent(noize_level).
+causes_val(finishedTask(SRVC,ID,checknoize,[OUT]),noize_level,OUT,assigned(SRVC,[workitem(checknoize,ID,[],[O])])) :-
+noize_type(O),noize_type(OUT).
+
+fun_fluent(temp_level).
+causes_val(finishedTask(SRVC,ID,checktemp,[OUT]),temp_level,OUT,assigned(SRVC,[workitem(checktemp,ID,[],[O])])) :-
+temp_type(O),temp_type(OUT).
+
+/*FLUENTS HUM_LEVEL AND HCHO_LEVEL*/
+
+fun_fluent(hum_level).
+causes_val(finishedTask(SRVC,ID,checkairquality,[OUT1,OUT2]),hum_level,OUT1,assigned(SRVC,[workitem(checkairquality,ID,[],[O1,O2])])) :-
+hum_type(OUT1),hcho_type(OUT2),hum_type(O1),hcho_type(O2).
+
+fun_fluent(hcho_level).
+causes_val(finishedTask(SRVC,ID,checkairquality,[OUT1,OUT2]),hcho_level,OUT2,assigned(SRVC,[workitem(checkairquality,ID,[],[O1,O2])])) :-
+hum_type(OUT1),hcho_type(OUT2),hum_type(O1),hcho_type(O2).
+
+/*FLUENTS MQ2_LEVEL, MQ3_LEVEL AND MQ5_LEVEL*/
+
+fun_fluent(mq2_level).
+causes_val(finishedTask(SRVC,ID,checkairstatus,[OUT1,OUT2,OUT3]),mq2_level,OUT1,assigned(SRVC,[workitem(checkairstatus,ID,[],[O1,O2,O3])])) :-
+mq2_type(OUT1),mq3_type(OUT2),mq5_type(OUT3),mq2_type(O1),mq3_type(O2),mq5_type(O3).
+
+fun_fluent(mq3_level).
+causes_val(finishedTask(SRVC,ID,checkairstatus,[OUT1,OUT2,OUT3]),mq3_level,OUT2,assigned(SRVC,[workitem(checkairstatus,ID,[],[O1,O2,O3])])) :-
+mq2_type(OUT1),mq3_type(OUT2),mq5_type(OUT3),mq2_type(O1),mq3_type(O2),mq5_type(O3).
+
+fun_fluent(mq5_level).
+causes_val(finishedTask(SRVC,ID,checkairstatus,[OUT1,OUT2,OUT3]),mq5_level,OUT3,assigned(SRVC,[workitem(checkairstatus,ID,[],[O1,O2,O3])])) :-
+mq2_type(OUT1),mq3_type(OUT2),mq5_type(OUT3),mq2_type(O1),mq3_type(O2),mq5_type(O3).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 /*FLUENT BATTERYLEVEL*/
@@ -310,8 +342,14 @@ initially(batteryrecharging,10).
 initially(movestep,1).
 initially(debrisstep,2).
 initially(generalbattery,50).
-initially(noize_level,50).
-initially(hum_level,50).
+
+initially(noize_level,normal).
+initially(hum_level,normal).
+initially(temp_level,normal).
+initially(hcho_level,normal).
+initially(mq2_level,normal).
+initially(mq3_level,normal).
+initially(mq5_level,normal).
 
 initially(at(act1),loc00).
 initially(at_exp(act1),loc00).
@@ -593,15 +631,20 @@ endPMS]).
 
 /* MAIN PROCESS */
 
-proc(process,[initPMS,manageExecution([workitem(checkstatus,id_1,[loc00],[normal,normal])]),
+proc(process,[initPMS,
+rrobin([[manageExecution([workitem(checktemp,id_1,[],[normal])])],[manageExecution([workitem(checknoize,id_2,[],[normal])])]]),
 rrobin([
-[manageExecution([workitem(go,id_3,[loc00,loc33],[loc33])]),manageExecution([workitem(takephoto,id_4,[loc33],[true])]),
- manageExecution([workitem(updatestatus,id_5,[loc33],[ok])])],
+[manageExecution([workitem(checkairquality,id_14,[],[normal,normal])])],
+[manageExecution([workitem(checkairstatus,id_15,[],[normal,normal,normal])])]
+]),
 rrobin([
-[manageExecution([workitem(go,id_6,[loc00,loc32],[loc32])]),manageExecution([workitem(evacuate,id_7,[loc32],[true])]),
- manageExecution([workitem(updatestatus,id_8,[loc32],[ok])])],
-[manageExecution([workitem(go,id_9,[loc00,loc31],[loc31])]),manageExecution([workitem(evacuate,id_10,[loc31],[true])]),
- manageExecution([workitem(updatestatus,id_11,[loc31],[ok])])]
+[manageExecution([workitem(go,id_5,[loc00,loc33],[loc33])]),manageExecution([workitem(takephoto,id_6,[loc33],[true])]),
+ manageExecution([workitem(updatestatus,id_7,[loc33],[ok])])],
+rrobin([
+[manageExecution([workitem(go,id_8,[loc00,loc32],[loc32])]),manageExecution([workitem(evacuate,id_9,[loc32],[true])]),
+ manageExecution([workitem(updatestatus,id_10,[loc32],[ok])])],
+[manageExecution([workitem(go,id_11,[loc00,loc31],[loc31])]),manageExecution([workitem(evacuate,id_12,[loc31],[true])]),
+ manageExecution([workitem(updatestatus,id_13,[loc31],[ok])])]
 ])]),
 endPMS]).
 
@@ -640,26 +683,6 @@ proc(writeFile(File),[?(open(File, write, Stream)),
 ?(writeln(Stream,('loc31 - location_type'))),
 ?(writeln(Stream,('loc32 - location_type'))),
 ?(writeln(Stream,('loc33 - location_type'))),	
-?(writeln(Stream,('normal - mq2_type'))),
-?(writeln(Stream,('smoke - mq2_type'))),
-?(writeln(Stream,('danger - mq2_type'))),	
-?(writeln(Stream,('normal - mq5_type'))),
-?(writeln(Stream,('smoke - mq5_type'))),
-?(writeln(Stream,('danger - mq5_type'))),
-?(writeln(Stream,('normal - mq3_type'))),
-?(writeln(Stream,('high - mq3_type'))),
-?(writeln(Stream,('extra - mq3_type'))),
-?(writeln(Stream,('extremelydry - hum_type'))),
-?(writeln(Stream,('dry - hum_type'))),
-?(writeln(Stream,('normal - hum_type'))),
-?(writeln(Stream,('danger - hum_type'))),
-?(writeln(Stream,('cold - temp_type'))),
-?(writeln(Stream,('normal - temp_type'))),
-?(writeln(Stream,('hot - temp_type'))),
-?(writeln(Stream,('whisper - noize_type'))),
-?(writeln(Stream,('normal - noize_type'))),
-?(writeln(Stream,('noise - noize_type'))),
-?(writeln(Stream,('firecracker - noize_type'))),
 ?(writeln(Stream,(')'))),
 ?(writeln(Stream,('(:init'))),
 if(free(act1)=true,?(writeln(Stream,('(free act1)'))),[]),
@@ -853,6 +876,16 @@ proc(printALL,[?(writeln('****FREE****')),
  	       ?(write('noize_level = ')),?(writeln(noize_level)),
 	       ?(writeln('****HUMIDITY LEVEL****')),
  	       ?(write('hum_level = ')),?(writeln(hum_level)),
+	       ?(writeln('****TEMPERATURE LEVEL****')),
+ 	       ?(write('temp_level = ')),?(writeln(temp_level)),
+	       ?(writeln('****HCHO LEVEL****')),
+ 	       ?(write('hcho_level = ')),?(writeln(hcho_level)),
+	       ?(writeln('****MQ2 LEVEL****')),
+ 	       ?(write('mq2_level = ')),?(writeln(mq2_level)),
+	       ?(writeln('****MQ3 LEVEL****')),
+ 	       ?(write('mq3_level = ')),?(writeln(mq3_level)),
+	       ?(writeln('****MQ5 LEVEL****')),
+ 	       ?(write('mq5_level = ')),?(writeln(mq5_level)),
 	       ?(writeln('****EVACUATED****')),
 	       ?(write('evacuated(loc00) = ')),?(writeln(evacuated(loc00))),
 	       ?(write('evacuated_exp(loc00) = ')),?(writeln(evacuated_exp(loc00))),

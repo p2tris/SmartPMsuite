@@ -96,6 +96,12 @@
    
    <xs:element minOccurs="0" ref="hum_level"/>
    <xs:element minOccurs="0" ref="noize_level"/>
+   <xs:element minOccurs="0" ref="temp_level"/>
+   <xs:element minOccurs="0" ref="hcho_level"/>
+   <xs:element minOccurs="0" ref="mq2_level"/>
+   
+   <xs:element minOccurs="0" ref="mq3_level"/>
+   <xs:element minOccurs="0" ref="mq5_level"/>
    </xs:choice>
   </xs:complexType>
 </xs:element>
@@ -150,7 +156,11 @@
   
   
   
-  <xs:enumeration value="checkstatus"/>
+  
+  <xs:enumeration value="checktemp"/>
+  <xs:enumeration value="checknoize"/>
+  <xs:enumeration value="checkairquality"/>
+  <xs:enumeration value="checkairstatus"/>
   </xs:restriction>
 </xs:simpleType>
 
@@ -275,13 +285,7 @@
 
 
 
- <xs:simpleType name="Status_type">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="ok"/>
-   <xs:enumeration value="fire"/>
-   <xs:enumeration value="debris"/>
-  </xs:restriction>
- </xs:simpleType>
+ 
 <xs:element id="dynamic_term-at" name="at">
   <xs:complexType>
    <xs:sequence>
@@ -338,52 +342,14 @@
 
 
 
-<xs:simpleType name="mq2_type" url="http://smartpm.cloudapp.net/arduinorules/mq2rules1421342598.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="smoke"/>
-   <xs:enumeration value="danger"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="mq5_type" url="http://smartpm.cloudapp.net/arduinorules/mq5rules1421342683.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="smoke"/>
-   <xs:enumeration value="danger"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="mq3_type" url="http://smartpm.cloudapp.net/arduinorules/mq3rules1421342753.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="high"/>
-   <xs:enumeration value="extra"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="hum_type" url="http://smartpm.cloudapp.net/arduinorules/humrules1421342964.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="extremelydry"/>
-   <xs:enumeration value="dry"/>
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="danger"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="temp_type" url="http://smartpm.cloudapp.net/arduinorules/temprules1421343065.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="cold"/>
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="hot"/>
-  </xs:restriction>
- </xs:simpleType>
 
 
-<xs:simpleType name="noize_type" url="http://smartpm.cloudapp.net/noiserules/Noizerules1421343605.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="whisper"/>
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="noise"/>
-   <xs:enumeration value="firecracker"/>
-  </xs:restriction>
- </xs:simpleType>
+
+
+
+
+
+
 
 
 <xs:element id="dynamic_term-hum_level" name="hum_level">
@@ -402,15 +368,117 @@
  </xs:element>
 
 
-<xs:simpleType name="location_type" url="http://smartpm.cloudapp.net/gpsrules/GPSrules1421409731.xml">
+
+<xs:simpleType name="status_type">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="ok"/>
+   <xs:enumeration value="fire"/>
+   <xs:enumeration value="debris"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="location_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/gpsrules/GPSrules1422301615.xml">
   <xs:restriction base="xs:string">
    <xs:enumeration value="loc00"/>
    <xs:enumeration value="loc01"/>
    <xs:enumeration value="loc02"/>
    <xs:enumeration value="loc03"/>
+   <xs:enumeration value="loc10"/>
+   <xs:enumeration value="loc13"/>
+   <xs:enumeration value="loc20"/>
+   <xs:enumeration value="loc23"/>
+   <xs:enumeration value="loc30"/>
    <xs:enumeration value="loc31"/>
    <xs:enumeration value="loc32"/>
    <xs:enumeration value="loc33"/>
   </xs:restriction>
  </xs:simpleType>
+
+<xs:simpleType name="noize_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/noiserules/Noizerules1422302557.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="whisper"/>
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="stereo"/>
+   <xs:enumeration value="ambulance"/>
+   <xs:enumeration value="firecracker"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="hum_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/humrules1422302688.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="dry"/>
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="wet"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="temp_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/temprules1422302844.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="cold"/>
+   <xs:enumeration value="chilly"/>
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="warm"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="hcho_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/hchorules1422302939.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="voc"/>
+   <xs:enumeration value="danger"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="mq2_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq2rules1422303109.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="smoke"/>
+   <xs:enumeration value="danger"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="mq5_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq5rules1422303175.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="smoke"/>
+   <xs:enumeration value="danger"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="mq3_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq3rules1422303241.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normal"/>
+   <xs:enumeration value="high"/>
+   <xs:enumeration value="extra"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:element id="dynamic_term-temp_level" name="temp_level">
+  <xs:complexType>
+   <xs:sequence/>
+   <xs:attribute name="value" type="temp_type"/>
+   <xs:attribute default="false" name="relevant" type="Boolean_type"/>
+  </xs:complexType>
+ </xs:element>
+<xs:element id="dynamic_term-hcho_level" name="hcho_level">
+  <xs:complexType>
+   <xs:sequence/>
+   <xs:attribute name="value" type="hcho_type"/>
+   <xs:attribute default="false" name="relevant" type="Boolean_type"/>
+  </xs:complexType>
+ </xs:element>
+<xs:element id="dynamic_term-mq2_level" name="mq2_level">
+  <xs:complexType>
+   <xs:sequence/>
+   <xs:attribute name="value" type="mq2_type"/>
+   <xs:attribute default="false" name="relevant" type="Boolean_type"/>
+  </xs:complexType>
+ </xs:element>
+
+<xs:element id="dynamic_term-mq3_level" name="mq3_level">
+  <xs:complexType>
+   <xs:sequence/>
+   <xs:attribute name="value" type="mq3_type"/>
+   <xs:attribute default="false" name="relevant" type="Boolean_type"/>
+  </xs:complexType>
+ </xs:element>
+<xs:element id="dynamic_term-mq5_level" name="mq5_level">
+  <xs:complexType>
+   <xs:sequence/>
+   <xs:attribute name="value" type="mq5_type"/>
+   <xs:attribute default="false" name="relevant" type="Boolean_type"/>
+  </xs:complexType>
+ </xs:element>
 </xs:schema>
