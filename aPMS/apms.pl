@@ -69,19 +69,19 @@ status_type(S) :- domain(S,[ok,fire,debris]).
 
 location_type(L) :- domain(L,[loc00,loc01,loc02,loc03,loc10,loc13,loc20,loc23,loc30,loc31,loc32,loc33]).
 
-mq2_type(M) :- domain(M,[normal,smoke,danger]).
+mq2_type(M) :- domain(M,[normalmq2,smokemq2,dangermq2]).
 
-mq5_type(M) :- domain(M,[normal,smoke,danger]).
+mq5_type(M) :- domain(M,[normalmq5,smokemq5,dangermq5]).
 
-mq3_type(M) :- domain(M,[normal,high,extra]).
+mq3_type(M) :- domain(M,[normalmq3,high,extra]).
 
-hcho_type(M) :- domain(M,[normal,voc,danger]).
+hcho_type(M) :- domain(M,[normalhcho,voc,dangerhcho]).
 
-hum_type(M) :- domain(M,[dry,normal,wet]).
+hum_type(M) :- domain(M,[dry,normalhum,wet]).
 
-temp_type(M) :- domain(M,[cold,chilly,normal,warm]).
+temp_type(M) :- domain(M,[cold,chilly,normaltemp,warm]).
 
-noize_type(N) :- domain(N,[whisper,normal,stereo,ambulance,firecracker]).
+noize_type(N) :- domain(N,[whisper,normalnoize,stereo,ambulance]).
 
 /* TASKS PERSPECTIVE */
 
@@ -343,13 +343,13 @@ initially(movestep,1).
 initially(debrisstep,2).
 initially(generalbattery,50).
 
-initially(noize_level,normal).
-initially(hum_level,normal).
-initially(temp_level,normal).
-initially(hcho_level,normal).
-initially(mq2_level,normal).
-initially(mq3_level,normal).
-initially(mq5_level,normal).
+initially(noize_level,normalnoize).
+initially(hum_level,normalhum).
+initially(temp_level,normaltemp).
+initially(hcho_level,normalhcho).
+initially(mq2_level,normalmq2).
+initially(mq3_level,normalmq3).
+initially(mq5_level,normalmq5).
 
 initially(at(act1),loc00).
 initially(at_exp(act1),loc00).
@@ -632,10 +632,10 @@ endPMS]).
 /* MAIN PROCESS */
 
 proc(process,[initPMS,
-rrobin([[manageExecution([workitem(checktemp,id_1,[],[normal])])],[manageExecution([workitem(checknoize,id_2,[],[normal])])]]),
+rrobin([[manageExecution([workitem(checktemp,id_1,[],[normaltemp])])],[manageExecution([workitem(checknoize,id_2,[],[normalnoize])])]]),
 rrobin([
-[manageExecution([workitem(checkairquality,id_14,[],[normal,normal])])],
-[manageExecution([workitem(checkairstatus,id_15,[],[normal,normal,normal])])]
+[manageExecution([workitem(checkairquality,id_14,[],[normalhum,normalhcho])])],
+[manageExecution([workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])]
 ]),
 rrobin([
 [manageExecution([workitem(go,id_5,[loc00,loc33],[loc33])]),manageExecution([workitem(takephoto,id_6,[loc33],[true])]),

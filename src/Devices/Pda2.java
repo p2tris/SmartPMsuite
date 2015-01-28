@@ -75,8 +75,13 @@ public class Pda2 implements Runnable {
 	   /*Tipi di dato associati all'esempio - devono essere definiti ad ogni esecuzione del programma*/
 	   private String status_type[] = {"ok","fire","debris"};
 	   private String location_type[] = {"loc00","loc01","loc02","loc03","loc10","loc13","loc20","loc23","loc30","loc31","loc32","loc33"};
-	   private String humidity_type[] = {"extremelydry","dry","normal","danger"};
-	   private String noize_type[] = {"whisper","normal","noise","firecracker"};
+	   private String hum_type[] = {"dry","normalhum","wet"};
+	   private String noize_type[] = {"whisper","normalnoize","stereo","ambulance"};	   
+	   private String temp_type[] = {"cold","chilly","normaltemp","warm"};
+	   private String mq3_type[] = {"normalmq3","high","extra"};
+	   private String hcho_type[] = {"normalhcho","voc","dangerhcho"};
+	   private String mq2_type[] = {"normalmq2","smokemq2","dangermq2"};
+	   private String mq5_type[] = {"normalmq5","smokemq5","dangermq5"};
 	   
 	   /*Vector contenente tutti i tipi di dato*/
 	   private Vector allDataTypes = new Vector();
@@ -135,8 +140,13 @@ public class Pda2 implements Runnable {
 		   allDataTypes.add(integer_type);
 		   allDataTypes.add(status_type);
 		   allDataTypes.add(location_type);	   
-		   allDataTypes.add(humidity_type);
+		   allDataTypes.add(hum_type);
 		   allDataTypes.add(noize_type);	
+		   allDataTypes.add(mq2_type);	
+		   allDataTypes.add(mq3_type);	
+		   allDataTypes.add(mq5_type);	
+		   allDataTypes.add(temp_type);
+		   allDataTypes.add(hcho_type);
 	   }
 	   
 		private void initGUI() {   
