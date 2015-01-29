@@ -28,7 +28,7 @@ public class SchemaUpload {
         httpclient.getParams().setParameter(CoreProtocolPNames.PROTOCOL_VERSION, HttpVersion.HTTP_1_1);
         
         // set upload server script address
-        HttpPost httppost = new HttpPost("http://www.dis.uniroma1.it/~smartpm/webtool/fileUpload.php");
+        HttpPost httppost = new HttpPost("http://smartpm.cloudapp.net/fileUpload.php");
         MultipartEntity mpEntity = new MultipartEntity();
         ContentBody contentFile = new FileBody(file);
         mpEntity.addPart("userfile", contentFile);

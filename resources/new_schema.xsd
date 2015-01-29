@@ -157,10 +157,14 @@
   
   
   
-  <xs:enumeration value="checktemp"/>
-  <xs:enumeration value="checknoize"/>
-  <xs:enumeration value="checkairquality"/>
+  
+  
+  
+  
   <xs:enumeration value="checkairstatus"/>
+  <xs:enumeration value="checkairquality"/>
+  <xs:enumeration value="checknoize"/>
+  <xs:enumeration value="checktemp"/>
   </xs:restriction>
 </xs:simpleType>
 
@@ -393,58 +397,13 @@
   </xs:restriction>
  </xs:simpleType>
 
-<xs:simpleType name="noize_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/noiserules/Noizerules1422302557.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="whisper"/>
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="stereo"/>
-   <xs:enumeration value="ambulance"/>
-   <xs:enumeration value="firecracker"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="hum_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/humrules1422302688.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="dry"/>
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="wet"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="temp_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/temprules1422302844.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="cold"/>
-   <xs:enumeration value="chilly"/>
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="warm"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="hcho_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/hchorules1422302939.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="voc"/>
-   <xs:enumeration value="danger"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="mq2_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq2rules1422303109.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="smoke"/>
-   <xs:enumeration value="danger"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="mq5_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq5rules1422303175.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="smoke"/>
-   <xs:enumeration value="danger"/>
-  </xs:restriction>
- </xs:simpleType>
-<xs:simpleType name="mq3_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq3rules1422303241.xml">
-  <xs:restriction base="xs:string">
-   <xs:enumeration value="normal"/>
-   <xs:enumeration value="high"/>
-   <xs:enumeration value="extra"/>
-  </xs:restriction>
- </xs:simpleType>
+
+
+
+
+
+
+
 <xs:element id="dynamic_term-temp_level" name="temp_level">
   <xs:complexType>
    <xs:sequence/>
@@ -481,4 +440,55 @@
    <xs:attribute default="false" name="relevant" type="Boolean_type"/>
   </xs:complexType>
  </xs:element>
+<xs:simpleType name="noize_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/noiserules/Noizerules1422440574.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="whisper"/>
+   <xs:enumeration value="normalnoize"/>
+   <xs:enumeration value="stereo"/>
+   <xs:enumeration value="ambulance"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="hum_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/humrules1422440730.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="dry"/>
+   <xs:enumeration value="normalhum"/>
+   <xs:enumeration value="wet"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="temp_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/temprules1422440881.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="cold"/>
+   <xs:enumeration value="chilly"/>
+   <xs:enumeration value="normaltemp"/>
+   <xs:enumeration value="warm"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="mq3_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq3rules1422441023.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normalmq3"/>
+   <xs:enumeration value="high"/>
+   <xs:enumeration value="extra"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="hcho_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/hchorules1422441139.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normalhcho"/>
+   <xs:enumeration value="voc"/>
+   <xs:enumeration value="dangerhcho"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="mq2_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq2rules1422441251.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normalmq2"/>
+   <xs:enumeration value="smokemq2"/>
+   <xs:enumeration value="dangermq2"/>
+  </xs:restriction>
+ </xs:simpleType>
+<xs:simpleType name="mq5_type" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduinorules/mq5rules1422441345.xml">
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="normalmq5"/>
+   <xs:enumeration value="smokemq5"/>
+   <xs:enumeration value="dangermq5"/>
+  </xs:restriction>
+ </xs:simpleType>
 </xs:schema>

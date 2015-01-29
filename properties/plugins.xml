@@ -3,7 +3,7 @@
 	
 
 
-<plugin-definition name="GPS-plugin" url="http://www.dis.uniroma1.it/~smartpm/webtool/map.html">
+<plugin-definition name="GPS-plugin" url="http://smartpm.cloudapp.net/map.html">
   <description>The GPS plugin for SmartPM. It allows a 
 to mark areas of interest from a real map 
 (by selecting latidude/longitude values) 
@@ -11,14 +11,14 @@ and associate them to the discrete
 locations (e.g.,loc00, loc01,etc.) defined 
 during the design stage</description>
  </plugin-definition>
-<plugin-definition name="Noize-plugin" url="http://www.dis.uniroma1.it/~smartpm/webtool/noize.html">
+<plugin-definition name="Noize-plugin" url="http://smartpm.cloudapp.net/noize.html">
   <description>Noize plugin of SmartPM. It allows to 
 associate the noise level 
 catched with the microphone of a 
 smartphone with discrete values defined 
 at design-time.</description>
  </plugin-definition>
-<plugin-definition name="Arduino-plugin" url="http://www.dis.uniroma1.it/~smartpm/webtool/arduino.html">
+<plugin-definition name="Arduino-plugin" url="http://smartpm.cloudapp.net/arduino.html">
   <description>The Arduino Plugin allows to associate the
 real values gathered by external sensors 
 attached to an Arduino platform with 

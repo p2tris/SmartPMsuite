@@ -11873,3 +11873,698 @@
 
 --assign(act1,[workitem(checkstatus,id_1,[loc00],[normal,normal])])
 
+** 2015-01-27 12:07:28.841 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 12:14:27.451 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 12:28:22.169 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 12:32:49.518 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 12:34:09.491 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 13:17:08.163 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 14:15:54.926 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 14:31:24.825 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 15:27:40.775 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 15:45:27.315 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 15:49:23.378 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 16:03:17.38 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 17:30:48.562 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 17:35:00.419 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-27 17:44:37.161 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normal])
+
+** 2015-01-27 17:49:07.184 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normal])
+
+** 2015-01-27 17:49:49.178 **
+--finishedTask(act1,id_1,checktemp,[])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normal])])
+
+** 2015-01-27 17:51:00.234 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normal])
+
+** 2015-01-27 18:09:58.735 **
+--finishedTask(act1,id_1,checktemp,[stereo])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+** 2015-01-27 18:23:56.222 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normal])
+
+** 2015-01-27 18:24:33.461 **
+--finishedTask(act1,id_1,checktemp,[])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--readyToStart(act1,id_1,checktemp)
+
+** 2015-01-27 18:41:44.312 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normal])
+
+** 2015-01-28 10:03:40.812 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 10:12:25.366 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 10:17:40.59 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 10:55:08.908 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 10:55:21.482 **
+--finishedTask(act1,id_1,checktemp,[])
+
+** 2015-01-28 11:06:32.122 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 11:29:45.731 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 11:33:16.051 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 11:34:36.15 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 11:38:01.404 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+** 2015-01-28 11:48:55.616 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normal])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normal])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normal])
+
+** 2015-01-28 11:51:57.353 **
+--finishedTask(act1,id_1,checktemp,[normal])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normal])])
+
+** 2015-01-28 12:00:07.284 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+** 2015-01-28 12:07:20.758 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+--readyToStart(act2,id_2,checknoize)
+
+** 2015-01-28 12:08:37.892 **
+--finishedTask(act2,id_2,checknoize,[normalnoize])
+
+--ackCompl(act2,id_2,checknoize)
+
+--release(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+** 2015-01-28 12:08:43.194 **
+--finishedTask(act1,id_1,checktemp,[cold])
+
+** 2015-01-28 12:11:41.669 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+** 2015-01-28 12:13:06.392 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+** 2015-01-28 12:13:22.596 **
+--finishedTask(act2,id_2,checknoize,[normalnoize])
+
+--ackCompl(act2,id_2,checknoize)
+
+--release(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+** 2015-01-28 12:13:24.488 **
+--finishedTask(act1,id_1,checktemp,[cold])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--assign(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+--readyToStart(act1,id_14,checkairquality)
+
+--start(act1,id_14,checkairquality,[],[normalhum,normalhcho])
+
+--readyToStart(act2,id_15,checkairstatus)
+
+--start(act2,id_15,checkairstatus,[],[normalmq2,normalmq3,normalmq5])
+
+** 2015-01-28 12:13:43.632 **
+--finishedTask(act2,id_15,checkairstatus,[smokemq2,high,dangermq5])
+
+--ackCompl(act2,id_15,checkairstatus)
+
+--release(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+** 2015-01-28 12:13:47.572 **
+--finishedTask(act1,id_14,checkairquality,[dry,normalhcho])
+
+--ackCompl(act1,id_14,checkairquality)
+
+--release(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--assign(act1,[workitem(go,id_5,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_8,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_11,[loc00,loc31],[loc31])])
+
+** 2015-01-28 12:14:59.701 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+** 2015-01-28 12:15:17.536 **
+--finishedTask(act1,id_1,checktemp,[normaltemp])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+** 2015-01-28 12:15:39.86 **
+--finishedTask(act2,id_2,checknoize,[normalnoize])
+
+--ackCompl(act2,id_2,checknoize)
+
+--release(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--assign(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--assign(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+--readyToStart(act1,id_14,checkairquality)
+
+--start(act1,id_14,checkairquality,[],[normalhum,normalhcho])
+
+--readyToStart(act2,id_15,checkairstatus)
+
+--start(act2,id_15,checkairstatus,[],[normalmq2,normalmq3,normalmq5])
+
+** 2015-01-28 12:16:16.445 **
+--finishedTask(act2,id_15,checkairstatus,[normalmq2,normalmq3,normalmq5])
+
+--ackCompl(act2,id_15,checkairstatus)
+
+--release(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+** 2015-01-28 12:16:56.489 **
+--finishedTask(act1,id_14,checkairquality,[normalhum,voc])
+
+--ackCompl(act1,id_14,checkairquality)
+
+--release(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--assign(act1,[workitem(go,id_5,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_8,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_11,[loc00,loc31],[loc31])])
+
+--readyToStart(act2,id_8,go)
+
+--start(act2,id_8,go,[loc00,loc32],[loc32])
+
+--readyToStart(act1,id_5,go)
+
+--start(act1,id_5,go,[loc00,loc33],[loc33])
+
+** 2015-01-28 17:05:44.941 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+** 2015-01-28 17:17:34.03 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+** 2015-01-28 17:19:54.959 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+** 2015-01-28 17:20:50.324 **
+--finishedTask(act1,id_1,checktemp,[normaltemp])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+** 2015-01-28 17:31:58.663 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+** 2015-01-28 17:40:36.083 **
+--finishedTask(act1,id_1,checktemp,[normaltemp])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+--readyToStart(act1,1,SmartPM taskXML)
+
+** 2015-01-28 18:00:43.423 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+** 2015-01-28 18:01:18.4 **
+--finishedTask(act2,id_2,checknoize,[whisper])
+
+--ackCompl(act2,id_2,checknoize)
+
+--release(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+** 2015-01-28 18:02:33.311 **
+--finishedTask(act1,id_1,checktemp,[normaltemp])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--assign(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+--readyToStart(act1,id_14,checkairquality)
+
+--start(act1,id_14,checkairquality,[],[normalhum,normalhcho])
+
+** 2015-01-28 18:02:46.586 **
+--finishedTask(act1,id_14,checkairquality,[normalhum,normalhcho])
+
+--ackCompl(act1,id_14,checkairquality)
+
+--release(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--readyToStart(act2,id_15,checkairstatus)
+
+--start(act2,id_15,checkairstatus,[],[normalmq2,normalmq3,normalmq5])
+
+** 2015-01-28 18:04:09.099 **
+--finishedTask(act2,id_15,checkairstatus,[normalmq2,normalmq3,normalmq5])
+
+--ackCompl(act2,id_15,checkairstatus)
+
+--release(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+--assign(act1,[workitem(go,id_5,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_8,[loc00,loc32],[loc32])])
+
+--readyToStart(act1,id_5,go)
+
+--assign(act3,[workitem(go,id_11,[loc00,loc31],[loc31])])
+
+--start(act1,id_5,go,[loc00,loc33],[loc33])
+
+--readyToStart(act2,id_8,go)
+
+--start(act2,id_8,go,[loc00,loc32],[loc32])
+
+--readyToStart(act3,id_11,go)
+
+--start(act3,id_11,go,[loc00,loc31],[loc31])
+
+** 2015-01-28 19:07:07.497 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+** 2015-01-28 19:08:27.607 **
+--finishedTask(act1,id_1,checktemp,[normaltemp])
+
+** 2015-01-28 19:08:29.382 **
+--finishedTask(act2,id_2,checknoize,[normalnoize])
+
+--ackCompl(act2,id_2,checknoize)
+
+--release(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+** 2015-01-28 19:12:49.353 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
+--readyToStart(act2,id_2,checknoize)
+
+--start(act2,id_2,checknoize,[],[normalnoize])
+
+** 2015-01-28 19:13:08.969 **
+--finishedTask(act1,id_1,checktemp,[normaltemp])
+
+--ackCompl(act1,id_1,checktemp)
+
+--release(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+** 2015-01-28 19:13:11.268 **
+--finishedTask(act2,id_2,checknoize,[normalnoize])
+
+--ackCompl(act2,id_2,checknoize)
+
+--release(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--assign(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--assign(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+--readyToStart(act1,id_14,checkairquality)
+
+--start(act1,id_14,checkairquality,[],[normalhum,normalhcho])
+
+** 2015-01-28 19:14:09.76 **
+--finishedTask(act1,id_14,checkairquality,[normalhum,normalhcho])
+
+--ackCompl(act1,id_14,checkairquality)
+
+--release(act1,[workitem(checkairquality,id_14,[],[normalhum,normalhcho])])
+
+--readyToStart(act2,id_15,checkairstatus)
+
+--start(act2,id_15,checkairstatus,[],[normalmq2,normalmq3,normalmq5])
+
+** 2015-01-28 19:14:52.191 **
+--finishedTask(act2,id_15,checkairstatus,[normalmq2,normalmq3,normalmq5])
+
+--ackCompl(act2,id_15,checkairstatus)
+
+--release(act2,[workitem(checkairstatus,id_15,[],[normalmq2,normalmq3,normalmq5])])
+
+--assign(act1,[workitem(go,id_5,[loc00,loc33],[loc33])])
+
+--assign(act2,[workitem(go,id_8,[loc00,loc32],[loc32])])
+
+--assign(act3,[workitem(go,id_11,[loc00,loc31],[loc31])])
+
+--readyToStart(act1,id_5,go)
+
+--start(act1,id_5,go,[loc00,loc33],[loc33])
+
+--readyToStart(act2,id_8,go)
+
+--start(act2,id_8,go,[loc00,loc32],[loc32])
+
+--readyToStart(act3,id_11,go)
+
+--start(act3,id_11,go,[loc00,loc31],[loc31])
+
+** 2015-01-28 19:19:35.846 **
+--finishedTask(act2,id_8,go,[loc00])
+
+--ackCompl(act2,id_8,go)
+
+--release(act2,[workitem(go,id_8,[loc00,loc32],[loc32])])
+
+** 2015-01-28 19:19:36.851 **
+--adaptStart
+
+--assign(act2,[workitem(go,id_adapt,[loc00,loc32],[loc32])])
+
+** 2015-01-29 14:31:57.571 **
+--initPMS
+
+--assign(act1,[workitem(checktemp,id_1,[],[normaltemp])])
+
+--assign(act2,[workitem(checknoize,id_2,[],[normalnoize])])
+
+--readyToStart(act1,id_1,checktemp)
+
+--start(act1,id_1,checktemp,[],[normaltemp])
+
