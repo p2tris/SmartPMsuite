@@ -45,6 +45,7 @@ import com.mxgraph.layout.mxParallelEdgeLayout;
 import com.mxgraph.layout.mxPartitionLayout;
 import com.mxgraph.layout.mxStackLayout;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
+import com.mxgraph.model.mxCell;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.mxGraphOutline;
 import com.mxgraph.swing.handler.mxKeyboardHandler;
@@ -215,7 +216,7 @@ public class BasicGraphEditor extends JPanel
 		JSplitPane outer = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, inner,
 				graphComponent);
 		outer.setOneTouchExpandable(true);
-		outer.setDividerLocation(200);
+		outer.setDividerLocation(220);
 		outer.setDividerSize(6);
 		outer.setBorder(null);
 
@@ -236,6 +237,9 @@ public class BasicGraphEditor extends JPanel
 		installHandlers();
 		installListeners();
 		updateTitle();
+		
+		
+		
 	}
 
 	/**
@@ -438,6 +442,7 @@ public class BasicGraphEditor extends JPanel
 	{
 		status(e.getX() + ", " + e.getY());
 	}
+	
 
 	/**
 	 * 
@@ -456,6 +461,7 @@ public class BasicGraphEditor extends JPanel
 						|| e.isControlDown())
 				{
 					BasicGraphEditor.this.mouseWheelMoved(e);
+
 				}
 			}
 
@@ -476,6 +482,7 @@ public class BasicGraphEditor extends JPanel
 			{
 				// Handles context menu on the Mac where the trigger is on mousepressed
 				mouseReleased(e);
+
 			}
 
 			/**
@@ -486,6 +493,7 @@ public class BasicGraphEditor extends JPanel
 				if (e.isPopupTrigger())
 				{
 					showOutlinePopupMenu(e);
+
 				}
 			}
 
@@ -501,9 +509,27 @@ public class BasicGraphEditor extends JPanel
 			public void mousePressed(MouseEvent e)
 			{
 				// Handles context menu on the Mac where the trigger is on mousepressed
+				
 				mouseReleased(e);
-			}
+				
+				/*
+				mxCell selectedCell = (mxCell) graphComponent.getGraph().getSelectionCell();
+								
+				System.out.println(selectedCell.getValue());
+				System.out.println(selectedCell.getClass());
+				*/
 
+			}
+			
+			/*
+			public void mouseClicked(MouseEvent event)
+			{
+			  if (event.getClickCount() == 2) {
+
+			  }
+			}
+			*/
+			
 			/**
 			 * 
 			 */
@@ -512,6 +538,7 @@ public class BasicGraphEditor extends JPanel
 				if (e.isPopupTrigger())
 				{
 					showGraphPopupMenu(e);
+
 				}
 			}
 
@@ -529,6 +556,11 @@ public class BasicGraphEditor extends JPanel
 					public void mouseDragged(MouseEvent e)
 					{
 						mouseLocationChanged(e);
+						//System.out.println("ECCOLO1");
+				
+						//Object created_cells[] = graphComponent.getGraph().getChildVertices(graphComponent.getGraph().getDefaultParent());
+
+
 					}
 
 					/*
@@ -538,6 +570,8 @@ public class BasicGraphEditor extends JPanel
 					public void mouseMoved(MouseEvent e)
 					{
 						mouseDragged(e);
+						//System.out.println("ECCOLO2");
+
 					}
 
 				});
@@ -796,6 +830,7 @@ public class BasicGraphEditor extends JPanel
 							|| graph.getModel().getChildCount(cell) == 0)
 					{
 						cell = graph.getDefaultParent();
+
 					}
 
 					graph.getModel().beginUpdate();

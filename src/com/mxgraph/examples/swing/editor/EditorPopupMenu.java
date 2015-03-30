@@ -20,7 +20,7 @@ import com.mxgraph.smartml.view.DeployProcess;
 import com.mxgraph.smartml.view.MainFrame;
 import com.mxgraph.smartml.view.RunProcess;
 import com.mxgraph.smartml.view.SetInitialState;
-import com.mxgraph.smartml.view.TasksNames;
+import com.mxgraph.smartml.view.SetTaskName;
 import com.mxgraph.swing.util.mxGraphActions;
 import com.mxgraph.util.mxResources;
 import com.mxgraph.view.mxGraph;
@@ -84,12 +84,13 @@ public class EditorPopupMenu extends JPopupMenu
 
 		addSeparator();
 
+		/*
 		add(
 				editor.bind(mxResources.get("edit"), mxGraphActions
 						.getEditAction())).setEnabled(selected);
 
 		addSeparator();
-
+		 */
 		add(editor.bind(mxResources.get("selectVertices"), mxGraphActions
 				.getSelectVerticesAction()));
 		add(editor.bind(mxResources.get("selectEdges"), mxGraphActions
@@ -102,15 +103,16 @@ public class EditorPopupMenu extends JPopupMenu
 		
 		/* ********************************************************
 		 * ******************************************************** */
-		/* ----------- SMARTML ------------- */
+		/* ----------- SMARTPM - ------------- */
 		
 		selectedCell = (mxCell) editor.getGraphComponent().getGraph().getSelectionCell();
+        final mxGraph graph = (mxGraph) editor.getGraphComponent().getGraph();
 		
 		final BasicGraphEditor ed = editor;
 		
 		if(selected && selectedCell.isVertex()){
 			addSeparator();
-			// NUOVA VOCE NEL MENU 
+			// NEW ITEM - SET THE NAME OF THE TASK 
 			JMenuItem task_names = new JMenuItem("Set Task Name"); 
 			add(task_names);    //.setEnabled(selected);
 			
@@ -118,21 +120,36 @@ public class EditorPopupMenu extends JPopupMenu
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					TasksNames tn = new TasksNames(selectedCell);
+					SetTaskName tn = new SetTaskName(graph,selectedCell);
 					tn.setVisible(true);
 					ed.getGraphComponent().getGraph().refresh();
 					
 				}
 			}); 
 			
-			
-		
 		}
-		
+		else if(selected && selectedCell.isEdge()){
+			addSeparator();
+			// NEW ITEM - SET THE CONDITION ON THE EDGE 
+			JMenuItem edge_condition = new JMenuItem("Set Edge Condition"); 
+			add(edge_condition);    //.setEnabled(selected);
+			
+			edge_condition.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					SetTaskName tn = new SetTaskName(graph,selectedCell);
+					tn.setVisible(true);
+					ed.getGraphComponent().getGraph().refresh();
+					
+				}
+			}); 
+			
+		}
 		else{
 		
 			addSeparator();
-			// NUOVA VOCE NEL MENU 
+			// NEW ITEM - ADD THE DOMAIN THEORY 
 			JMenuItem domain = new JMenuItem("Domain Theory"); 
 			add(domain);    //.setEnabled(selected);
 						

@@ -26,8 +26,10 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Vector;
 
 import javax.imageio.ImageIO;
+import javax.management.modelmbean.XMLParseException;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
@@ -74,6 +76,7 @@ import com.mxgraph.util.png.mxPngEncodeParam;
 import com.mxgraph.util.png.mxPngImageEncoder;
 import com.mxgraph.util.png.mxPngTextDecoder;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxMultiplicity;
 
 /**
  *
@@ -785,6 +788,9 @@ public class EditorActions
 						XMLParser.copy_the_content_of_a_file_into_another_file("resources/new_repository.xml","resources/" + file_name_without_extension+"_repository.xml");
 						
 						Constants.setDomTheoryModified(false);
+						
+						Constants.setBPMN_process_file("resources/" + file_name_without_extension+".mxe");
+						
 						//Constants.setXSD_name_file("resources/" + file_name_without_extension+"_schema.xsd");
 						//Constants.setXML_name_file("resources/" + file_name_without_extension+"_repository.xml");
 						//**************
@@ -1491,6 +1497,8 @@ public class EditorActions
 					//************** Domain Theory 
 					Constants.setXSD_name_file("resources/new_schema.xsd");
 					Constants.setXML_name_file("resources/new_repository.xml");
+					Constants.setBPMN_process_file("resources/new_diagram.mxe");
+					
 					Constants.setDomTheoryModified(false);
 					
 					XMLParser.initializeXMLfiles();
@@ -1816,8 +1824,45 @@ public class EditorActions
 									XMLParser.copy_the_content_of_a_file_into_another_file("resources/" + file_name_without_extension+"_repository.xml", "resources/new_repository.xml");
 									
 									Constants.setDomTheoryModified(false);
+									
+									Constants.setBPMN_process_file("resources/" + file_name_without_extension+".mxe");
+					
 									//Constants.setXSD_name_file("resources/" + file_name_without_extension+"_schema.xsd");
 									//Constants.setXML_name_file("resources/" + file_name_without_extension+"_repository.xml");
+									//****************************** 
+									
+									//************** Update Multiplicity (Syntactic) Rules 
+									Vector taskNamesVector = XMLParser.getTaskInstanceNames(true);
+									int tasks_number = taskNamesVector.size();
+									
+									mxMultiplicity[] multiplicities = Constants.getOriginal_multiplicities_array();
+									
+									int old_length = multiplicities.length;
+									
+									int mult_lenght = old_length + tasks_number*2;
+															
+									mxMultiplicity[] new_multiplicities_array = new mxMultiplicity[mult_lenght];
+									
+									for(int i=0;i<multiplicities.length;i++) {
+										
+										new_multiplicities_array[i] = multiplicities[i];
+										
+									}
+																		
+									for(int j=0, k=0;j<tasks_number;j++) {							
+										
+										
+										// Activities do not want more than one outgoing connection
+										new_multiplicities_array[old_length + k] = new mxMultiplicity(false, (String) taskNamesVector.elementAt(j), null, null, 1,"1", null, "Tasks must have no more than one incoming edge! ", null, true);
+											
+										// Activities Joins do not want more than one outgoing connection
+										new_multiplicities_array[old_length + k + 1] = new mxMultiplicity(true, (String) taskNamesVector.elementAt(j), null, null, 1,"1", null, "Tasks must have no more than one outgoing edge! ", null, true);
+
+										k = k + 2;
+									}
+
+									graph.setMultiplicities(new_multiplicities_array);
+									
 									//****************************** 
 									
 									Document document = mxXmlUtils

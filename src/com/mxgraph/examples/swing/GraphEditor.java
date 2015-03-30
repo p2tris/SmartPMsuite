@@ -10,11 +10,13 @@ import java.awt.Point;
 import java.awt.Toolkit;
 import java.net.URL;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.text.StyleContext.SmallAttributeSet;
 
@@ -42,6 +44,7 @@ import com.mxgraph.util.mxResources;
 import com.mxgraph.util.mxUtils;
 import com.mxgraph.view.mxCellState;
 import com.mxgraph.view.mxGraph;
+import com.mxgraph.view.mxMultiplicity;
 
 public class GraphEditor extends BasicGraphEditor
 {
@@ -76,11 +79,18 @@ public class GraphEditor extends BasicGraphEditor
 	{
 		super(appTitle, component);
 		final mxGraph graph = graphComponent.getGraph();
-
+		
+		/* SMARTPM -- THE NAME OF THE TASK AND CONDITIONS ON THE EDGES CAN BE INSERTED ONLY THROUGH THE WIZARD BASED GUI*/
+		graph.setCellsEditable(false);
+		
 		// Creates the shapes palette
 		//EditorPalette shapesPalette = insertPalette(mxResources.get("shapes"));
 		//EditorPalette imagesPalette = insertPalette(mxResources.get("images"));
-		EditorPalette symbolsPalette = insertPalette(mxResources.get("symbols"));
+		//EditorPalette symbolsPalette = insertPalette(mxResources.get("symbols"));
+		
+		EditorPalette evPalette = insertPalette("Events");
+		EditorPalette actPalette = insertPalette("Activities");
+		EditorPalette gatPalette = insertPalette("Gateways");
 		
 		/*
 		// Sets the edge template to be used for creating new edges if an edge
@@ -100,6 +110,16 @@ public class GraphEditor extends BasicGraphEditor
 					{
 						((CustomGraph) graph).setEdgeTemplate(cell);
 					}
+					
+					//
+					// Print the element being dragged from the palette located at the left of the GUI.
+					//
+					else if(graph.getModel().isVertex(cell)) {
+						
+						System.out.println(graph.getModel().getValue(cell));
+					
+					}
+					
 				}
 			}
 
@@ -371,15 +391,68 @@ public class GraphEditor extends BasicGraphEditor
 						80, 80, "Error");
 		*/
 		
-		symbolsPalette
-				.addTemplate(
-						"Start Event",  // event 
-						new ImageIcon(
-								GraphEditor.class
-										.getResource("/com/mxgraph/examples/swing/images/event.png")),
-						"roundImage;image=/com/mxgraph/examples/swing/images/event.png",
-						30, 30, "Start Event");
+		evPalette.addTemplate(
+				"Start Event",  // event 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/event.png")),
+				"roundImage;image=/com/mxgraph/examples/swing/images/event.png",
+				30, 30, "Start\nEvent");		
 		
+		gatPalette.addTemplate(
+				"Par. Split", 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/fork_split_blue.png")),
+				"rhombusImage;image=/com/mxgraph/examples/swing/images/fork_split_blue.png",
+				40, 40, "Parallel\nSplit");
+		
+		gatPalette
+		.addTemplate(
+				"Par. Join", 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/fork_join_blue.png")),
+				"rhombusImage;image=/com/mxgraph/examples/swing/images/fork_join_blue.png",
+				40, 40, "Parallel\nJoin");
+		
+		gatPalette
+		.addTemplate(
+				"Ex. Split", 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/exGateway_split_green.png")),
+				"rhombusImage;image=/com/mxgraph/examples/swing/images/exGateway_split_green.png",
+				40, 40, "Exclusive\nSplit");
+		
+		gatPalette
+		.addTemplate(
+				"Ex. Join", 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/exGateway_join_green.png")),
+				"rhombusImage;image=/com/mxgraph/examples/swing/images/exGateway_join_green.png",
+				40, 40, "Exclusive\nJoin");
+		
+		gatPalette
+		.addTemplate(
+				"Loop Split", 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/loop_split_red.png")),
+				"rhombusImage;image=/com/mxgraph/examples/swing/images/loop_split_red.png",
+				40, 40, "Loop\nSplit");
+		
+		gatPalette
+		.addTemplate(
+				"Loop Join", 
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/loop_join_red.png")),
+				"rhombusImage;image=/com/mxgraph/examples/swing/images/loop_join_red.png",
+				40, 40, "Loop\nJoin");
+		
+		/*
 		symbolsPalette
 				.addTemplate(
 						"Parallel Gateway",  // fork
@@ -388,7 +461,7 @@ public class GraphEditor extends BasicGraphEditor
 										.getResource("/com/mxgraph/examples/swing/images/fork.png")),
 						"rhombusImage;image=/com/mxgraph/examples/swing/images/fork.png",
 						40, 40, "Parallel Gateway");
-		/*
+		
 		symbolsPalette
 				.addTemplate(
 						"Inclusive",  
@@ -397,8 +470,7 @@ public class GraphEditor extends BasicGraphEditor
 										.getResource("/com/mxgraph/examples/swing/images/inclusive.png")),
 						"rhombusImage;image=/com/mxgraph/examples/swing/images/inclusive.png",
 						80, 80, "Inclusive");
-		*/
-		/*
+
 		symbolsPalette
 				.addTemplate(
 						"Link",  
@@ -407,7 +479,7 @@ public class GraphEditor extends BasicGraphEditor
 										.getResource("/com/mxgraph/examples/swing/images/link.png")),
 						"roundImage;image=/com/mxgraph/examples/swing/images/link.png",
 						80, 80, "Link");
-		*/
+
 		symbolsPalette
 				.addTemplate(
 						"Exclusive Gateway",   // merge -- MODIFICATA IMMAGINE 
@@ -416,7 +488,7 @@ public class GraphEditor extends BasicGraphEditor
 										.getResource("/com/mxgraph/examples/swing/images/exGateway.png")),
 						"rhombusImage;image=/com/mxgraph/examples/swing/images/exGateway.png",
 						40, 40, "Exclusive Gateway");
-		/*
+
 		symbolsPalette
 				.addTemplate(
 						"Message",  
@@ -443,23 +515,33 @@ public class GraphEditor extends BasicGraphEditor
 						80, 80, "Rule");
 		*/
 		
-		symbolsPalette
+		
+		evPalette
 				.addTemplate(
 						"End Event",  // terminate  
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/com/mxgraph/examples/swing/images/terminate.png")),
 						"roundImage;image=/com/mxgraph/examples/swing/images/terminate.png", 
-						30, 30, "End Event");
+						30, 30, "End\nEvent");
+		
+		actPalette
+		.addTemplate(
+				"Task",  
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/rectangle_icon.png")),
+								"roundImage;image=/com/mxgraph/examples/swing/images/rectangle.png", 50, 40, "");
 		
 		
-		symbolsPalette
-			.addTemplate(
-					"Activity",  
-					new ImageIcon(
-							GraphEditor.class
-									.getResource("/com/mxgraph/examples/swing/images/rectangle.png")),
-									"roundImage;image=/com/mxgraph/examples/swing/images/rectangle.png", 50, 40, "");
+		actPalette
+		.addTemplate(
+				"Loop Task",  
+				new ImageIcon(
+						GraphEditor.class
+								.getResource("/com/mxgraph/examples/swing/images/rectangle_loop_icon.png")),
+								"roundImage;image=/com/mxgraph/examples/swing/images/rectangle_loop.png", 50, 40, "");
+		
 		     	      // roundImage - "image;image=/com/mxgraph/examples/swing/images/rectangle.png" 	
 					  // se metto null mi fa scrivere all'interno del rettangolo, altrimenti in basso !!
 		/*
@@ -472,6 +554,8 @@ public class GraphEditor extends BasicGraphEditor
 						"roundImage;image=/com/mxgraph/examples/swing/images/timer.png",
 						80, 80, "Timer");
 		*/
+		
+		
 	}
 
 	/**
@@ -497,7 +581,11 @@ public class GraphEditor extends BasicGraphEditor
 			setPageVisible(true);
 			setGridVisible(true);
 			setToolTips(true);
-			getConnectionHandler().setCreateTarget(true);
+			getConnectionHandler().setCreateTarget(false);
+			graph.setMultigraph(false);
+			graph.setAllowDanglingEdges(false);
+
+			
 
 			// Loads the defalt stylesheet from an external file
 			mxCodec codec = new mxCodec();
@@ -509,6 +597,54 @@ public class GraphEditor extends BasicGraphEditor
 			// Sets the background to white
 			getViewport().setOpaque(true);
 			getViewport().setBackground(Color.WHITE);
+			
+			mxMultiplicity[] multiplicities = new mxMultiplicity[14];
+
+			// Start Events do not want any incoming connection
+			multiplicities[0] = new mxMultiplicity(false, "Start\nEvent", null, null, 0,"0", null, "A Start Event must have no incoming edge! ", null, true);
+			
+			// End Events do not want more than one incoming connection
+			multiplicities[1] = new mxMultiplicity(false, "End\nEvent", null, null, 1,"1", null, "An End Event must have no more than one incoming edge! ", null, true);
+			
+			// Parallel Splits do not want more than one incoming connection
+			multiplicities[2] = new mxMultiplicity(false, "Parallel\nSplit", null, null, 1,"1", null, "Parallel Splits must have no more than one incoming edge! ", null, true);
+			
+			// Exclusive Splits do not want more than one incoming connection
+			multiplicities[3] = new mxMultiplicity(false, "Exclusive\nSplit", null, null, 1,"1", null, "Exclusive Splits must have no more than one incoming edge! ", null, true);
+			
+			// Start Events do not want more than one outgoing connection
+			multiplicities[4] = new mxMultiplicity(true, "Start\nEvent", null, null, 1,"1", null, "A Start Event must have no more than one outgoing edge! ", null, true);
+
+			// End Events do not want do not want any outgoing connection
+			multiplicities[5] = new mxMultiplicity(true, "End\nEvent", null, null, 0,"0", null, "An End Event must have no outgoing edge! ", null, true);
+			
+			// Parallel Join do not want more than one outgoing connection
+			multiplicities[6] = new mxMultiplicity(true, "Parallel\nJoin", null, null, 1,"1", null, "Parallel Joins must have no more than one outgoing edge! ", null, true);
+			
+			// Exclusive Join do not want more than one outgoing connection
+			multiplicities[7] = new mxMultiplicity(true, "Exclusive\nJoin", null, null, 1,"1", null, "Exclusive Joins must have no more than one outgoing edge! ", null, true);
+			
+			// Activities do not want more than one outgoing connection
+			multiplicities[8] = new mxMultiplicity(false, "", null, null, 1,"1", null, "Tasks must have no more than one incoming edge! ", null, true);
+			
+			// Activities do not want more than one outgoing connection
+			multiplicities[9] = new mxMultiplicity(true, "", null, null, 1,"1", null, "Tasks must have no more than one outgoing edge! ", null, true);
+			
+			// Loop Splits do not want more than two incoming connections
+			multiplicities[10] = new mxMultiplicity(false, "Loop\nSplit", null, null, 2,"2", null, "Loop Splits must have no more than two incoming edge! ", null, true);
+			
+			// Loop Splits do not want more than one outgoing connection
+			multiplicities[11] = new mxMultiplicity(true, "Loop\nSplit", null, null, 1,"1", null, "Loop Splits must have no more than one outgoing edge! ", null, true);	
+			
+			// Loop Joins do not want more than one incoming connection
+			multiplicities[12] = new mxMultiplicity(false, "Loop\nJoin", null, null, 1,"1", null, "Loop Joins must have no more than one incoming edge! ", null, true);
+			
+			// Loop Joins do not want more than two outgoing connections
+			multiplicities[13] = new mxMultiplicity(true, "Loop\nJoin", null, null, 2,"2", null, "Loop Joins must have no more than two outgoing edge! ", null, true);
+			
+			graph.setMultiplicities(multiplicities);
+			Constants.setOriginal_multiplicities_array(multiplicities);
+			
 		}
 
 		/**
@@ -516,9 +652,36 @@ public class GraphEditor extends BasicGraphEditor
 		 * is not a valid drop target and the cells are of the same
 		 * type (eg. both vertices or both edges). 
 		 */
-		public Object[] importCells(Object[] cells, double dx, double dy,
-				Object target, Point location)
-		{
+		public Object[] importCells(Object[] cells, double dx, double dy, Object target, Point location) {
+		
+			/*-*************** SMARTPM ****************************/
+			// Only a single start/end event can be defined for a SmartPM process
+			
+			if(graph.getModel().getValue(cells[0]).toString().equalsIgnoreCase("Start\nEvent") ||
+					graph.getModel().getValue(cells[0]).toString().equalsIgnoreCase("End\nEvent")) {
+				
+				//Obtain all the objects (nodes and edges) that are present in the modeling canvas.
+				Object[] obj = graph.getChildVertices(graph.getDefaultParent());
+				
+				for(int i = 0;i<obj.length;i++) {
+					if(graph.getModel().isVertex(obj[i])) {						
+						if(graph.getModel().getValue(obj[i]).toString().equalsIgnoreCase(graph.getModel().getValue(cells[0]).toString())) {
+							
+							if(graph.getModel().getValue(cells[0]).toString().equalsIgnoreCase("Start\nEvent"))
+								JOptionPane.showMessageDialog(null, "Only a single Start Event can be defined\nin the control flow of the process! ","Message", JOptionPane.INFORMATION_MESSAGE, null);
+							else if(graph.getModel().getValue(cells[0]).toString().equalsIgnoreCase("End\nEvent"))
+								JOptionPane.showMessageDialog(null, "Only a single End Event can be defined\nin the control flow of the process! ","Message", JOptionPane.INFORMATION_MESSAGE, null);
+							
+								return null;
+						}
+						//System.out.println(graph.getModel().getValue(obj[i]));
+						//System.out.println(graph.getModel().getValue(cells[0]));
+					}	
+				}
+			}
+						
+			/*-*****************************************************/
+
 			if (target == null && cells.length == 1 && location != null)
 			{
 				target = getCellAt(location.x, location.y);
@@ -540,6 +703,7 @@ public class GraphEditor extends BasicGraphEditor
 				}
 			}
 
+	
 			return super.importCells(cells, dx, dy, target, location);
 		}
 
@@ -731,6 +895,7 @@ public class GraphEditor extends BasicGraphEditor
 		
 		Constants.setXSD_name_file("resources/new_schema.xsd");
 		Constants.setXML_name_file("resources/new_repository.xml");
+		Constants.setBPMN_process_file("resources/new_process.mxe");
 		Constants.setDomTheoryModified(false);
 		
 		XMLParser.initializeXMLfiles();

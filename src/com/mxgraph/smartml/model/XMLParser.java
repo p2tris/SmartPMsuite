@@ -236,6 +236,53 @@ public class XMLParser {
 /*------------------------------------------------------------ GETTERS ------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------------------------------------------------------------------------*/	
 
+	/** 
+	 * Method for retrieving all the task instance names from the BPMN process (.mxe file)
+	**/
+	public static Vector<String> getTaskInstanceNames(boolean lowerCase){
+		Vector<String> taskNames = new Vector<String>();
+		try{
+			
+			Document doc = connect(Constants.getBPMN_process_file());
+			Element root = doc.getDocumentElement();
+			NodeList rChilds = root.getChildNodes();
+			for(int index=0;index<rChilds.getLength();index++){
+				Node n = rChilds.item(index);
+				NodeList nChilds = n.getChildNodes();
+				for(int ind=0;ind<nChilds.getLength();ind++){
+					Node n1 = nChilds.item(ind);					
+					if(n1.getNodeType() == Element.ELEMENT_NODE){				
+					Element eN = (Element)n1;
+						if(eN.getAttribute("style").contains("rectangle.png") || eN.getAttribute("style").contains("rectangle_loop.png")) {	
+							
+							String task_name = new String();
+							/*
+							if(eN.getAttribute("value").contains("\n")) {
+								task_name = eN.getAttribute("value").replace("\n","");
+							}
+							else 
+							*/
+							
+							task_name = eN.getAttribute("value");
+							
+							if(!lowerCase)					
+								taskNames.add(task_name);
+							else
+								taskNames.add(task_name.toLowerCase());
+						}
+					}
+				}
+			}
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+		return taskNames;
+	
+	}
+	
+	
+	
     /** 
 	 * Method for retrieving all the elements names from the XSD file
 	**/
